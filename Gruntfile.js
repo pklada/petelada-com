@@ -62,10 +62,10 @@ module.exports = function(grunt) {
     },
     shell : {
         jekyllBuild : {
-            command : 'jekyll build'
+            command : "jekyll build --config _config.yml,_config-dev.yml"
         },
         jekyllServe : {
-            command : 'jekyll serve'
+            command : "jekyll serve --config _config.yml,_config-dev.yml"
         }
     },
     connect: {
@@ -75,6 +75,19 @@ module.exports = function(grunt) {
           base: '_site/',
           port: 9009
         }
+      }
+    },
+    concurrent: {
+        target: {
+            tasks: ['watch', 'shell:jekyllServe'],
+            options: {
+                logConcurrentOutput: true
+            }
+        }
+    },
+    jekyll: {
+      options: {
+        serve: true
       }
     }
   });
@@ -88,9 +101,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-jekyll');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'watch']);
-  grunt.registerTask('serve', ['shell:jekyllBuild', 'connect:server', 'watch']);
+  grunt.registerTask('serve', ['concurrent']);
 
 };

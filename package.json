@@ -12,6 +12,7 @@
     "grunt-contrib-compass": "~0.8.0",
     "grunt-contrib-connect": "~0.7.1",
     "grunt-jekyll": "~0.4.2",
-    "grunt-shell": "~0.7.0"
+    "grunt-shell": "~0.7.0",
+    "grunt-concurrent": "~0.5.0"
   }
 }
