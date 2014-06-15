@@ -1,0 +1,104 @@
+.header{
+	z-index: 5;
+	@include background(linear-gradient(bottom, transparentize($bgd, .1), transparentize($bgd, 0)));
+	h1{
+		color: $black;
+		margin-bottom: rhythm(.4, 38px);
+	}
+	@include respond-to(handhelds) {
+		h1{
+			//margin-bottom: rhythm(1, 38px);
+			text-align: center;
+		}
+	}
+}
+
+.icon{
+	padding:30px;
+	background: transparentize($black, .95);
+	display: inline-block;
+	position: absolute;
+	top:50%;
+	margin-top:-65px;
+	&:after{
+		content: "";
+		position: absolute;
+		width:4px;
+		background: transparentize($black, .95);
+		top:100%;
+		right:0;
+		height:200px;
+		display: block;
+	}
+	a{
+		width:70px;
+		height:70px;
+		display: block;
+		text-indent: -9999em;
+		background:transparent url('/images/pete-lada-icon.png') center center no-repeat;
+		@include image-2x("/images/pete-lada-icon@2x.png", 70px, 70px);
+	}
+	@include respond-to(handhelds) {
+		top:0;
+		left:50%;
+		margin-top:0;
+		margin-left:-65px;
+		&:after{
+			display: none;
+		}
+	}
+}
+
+.site-nav{
+	ul{
+		list-style: none;
+		padding:0;
+		margin:0;
+		li{
+			display: inline-block;
+			padding-left:$base-padding;
+			a{
+				display: inline-block;
+				&.selected{
+					font-weight:bold;
+				}
+			}
+		}
+	}
+	@include respond-to(handhelds) {
+		display: none;	
+	}
+}
+
+.social{
+	@extend .site-nav;
+	float:left;
+	ul{
+		li{
+			padding-left:0;
+			padding-right:$base-padding;
+			.fa{
+				@include adjust-font-size-to(20px);
+				position: relative;
+				top:2px;
+			}
+		}
+	}
+	@include respond-to(handhelds) {
+		ul{
+			text-align: center;
+			li{
+				&:first-child{
+					padding-right:10px;
+				}
+				&:last-child{
+					padding-right:0;
+					padding-left:10px;
+				}
+			}
+		}
+		display: block;
+		float:none;
+		margin-right:0;	
+	}
+}

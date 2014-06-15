@@ -1,0 +1,125 @@
+
+.post-container{
+	background: white;
+	border-radius: $base-border-radius;
+	@include box-shadow(0 2px 4px rgba(0,0,0,.04));
+	border:1px solid transparentize($base, .75);
+	position: relative;
+	margin-top:$large-margin-vertical;
+	margin-bottom:rhythm(1);
+	&:after{
+		content: "";
+		position: absolute;
+		display: block;
+		left:10px;
+		right:10px;
+		height:10px;
+		bottom:-10px;
+		background: white;
+		border-radius: $base-border-radius;
+		@include box-shadow(0 2px 4px rgba(0,0,0,.04), inset 0 2px 4px rgba(0,0,0,.04));
+		border:1px solid transparentize($base, .75);
+		opacity: .7;
+	}
+
+	@include respond-to(handhelds) {
+		margin-left:$base-mobile-padding;
+		margin-right:$base-mobile-padding;
+	}
+}
+
+.meta{
+	position: absolute;
+	top:10px;
+	left:0;
+	width:130px;
+	bottom:0;
+	margin-top:$large-margin-vertical;
+	padding-left:$base-padding;
+	p{
+		color:$base;
+		@include adjust-font-size-to(13px);
+		clear:left;
+	}
+	.post-icon{
+		display: block;
+		float: left;
+		width:52px;
+		height:42px;
+		background: transparent url(/images/post-icon-text.png) left no-repeat;
+		margin-bottom:$base-margin-vertical;
+		@include image-2x("/images/post-icon-text@2x.png", 52px, 42px);
+	}
+	@include respond-to(handhelds) {
+		position: relative;
+		top:0;
+		left:0;
+		padding-left:$base-mobile-padding;
+		.post-icon{
+			margin-bottom:rhthym(0);
+		}
+	}
+}
+
+.post{
+	margin-left:130px;
+	max-width:700px;
+	padding-left:$base-padding;
+	padding-right:$base-padding;
+	margin-top:$large-margin-vertical;
+	margin-bottom:$large-margin-vertical;
+	h2{
+		//text-transform: uppercase;
+		@include adjust-font-size-to(34px);
+		color:$black;
+		font-weight:600;
+		font-variant:small-caps;
+	}
+	h3{
+		font-weight:600;
+	}
+	p{
+		a{
+			text-decoration: underline;
+		}
+	}
+
+	img{
+		max-width:100%;
+		display: block;
+		margin-bottom: rhythm(1);
+	}
+
+	@include respond-to(handhelds) {
+		margin-left:0;
+		margin-top:0;
+		padding-left:$base-mobile-padding;
+		padding-right:$base-mobile-padding;
+		h2{
+			margin-top: 0;
+		}
+	}
+}
+
+.post-actions{
+	margin-left:130px;
+	padding-left:$base-padding;
+	padding-right:$base-padding;
+	margin-top:$large-margin-vertical;
+	margin-bottom:$large-margin-vertical*1.5;
+	@include respond-to(handhelds) {
+		border-top:1px solid #eee;
+		margin-left:0;
+		margin-top:0;
+		padding-top:$base-mobile-padding;
+		padding-left:$base-mobile-padding;
+		padding-right:$base-mobile-padding;
+		margin-bottom: 0;
+		a{
+			display: block;
+			margin-bottom: rhythm(1);
+			text-align: center;
+			margin-right:0;
+		}
+	}
+}

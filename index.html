@@ -3,11 +3,24 @@ layout: default
 title: Pete Lada
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+{% for post in site.posts %}
+<div class="post-container">
+	<div class="meta">
+		<div class="post-icon"></div>
+		<p class="date">{{ post.date | date_to_string }}</p>
+	</div>
+	<div class="post">
+		<h2>{{ post.title }}</h2>
+		{% if post.slug %}
+			{{ post.slug }}
+		{% else %}
+			{{ post.excerpt }}
+		{% endif %}
+	</div>
+	<div class="post-actions">
+		{% if post.has_excerpt %}<a href="{{post.url}}" class="button">Continue Reading</a>{% endif %}
+		<a href="http://twitter.com/share?text={{post.title}}&url={{ site.baseurl }}{{post.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
+	</div>
+
+</div> <!-- / .post-container -->
+{% endfor %}

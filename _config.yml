@@ -2,3 +2,4 @@ name: Pete Lada
 markdown: redcarpet
 pygments: true
 baseurl: /petelada-com
+excerpt_separator: <!--end-->

@@ -1,9 +1,18 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
-{{ content }}
-</div>
+<div class="post-container">
+	<div class="meta">
+		<div class="post-icon"></div>
+		<p class="date">{{ page.date | date_to_string }}</p>
+	</div>
+	<div class="post">
+		<h2>{{ page.title }}</h2>
+		{{ content }}
+	</div>
+	<div class="post-actions">
+		<a href="http://twitter.com/share?text={{page.title}}&url={{ site.baseurl }}{{page.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share this</a>
+	</div>
+
+</div> <!-- / .post-container -->

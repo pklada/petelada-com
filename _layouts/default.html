@@ -10,34 +10,50 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/app.css">
+
+        <!-- fonts -->
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     </head>
     <body>
 
-        <div class="site">
+        <div class="container">
           <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
+            <div class="content">
+              <div class="icon">
+                <a href="/">Pete Lada</a>
+              </div>
+              <div class="page-title">
+                <h1 class="title">Hi, I'm Pete Lada</h1>
+                <div class="site-nav">
+                  <ul>
+                    <li><a href="/" class="selected">Posts</a></li>
+                    <li><a href="mailto:pklada@gmail.com">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li><a href="http://twitter.com/pklada"><i class="fa fa-twitter"></i> pklada</a></li>
+                    <li><a href="http://dribbble.com/plada"><i class="fa fa-dribbble"></i> plada</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero">
+            <div class="content">
+              <h2>I am a designer and front-end developer. I spend my time fussing with pixels in sketch or pretending I know how to use vim. I live in the cheerful Bay Area and love coffee.</h2>
+            </div>
           </div>
 
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
+          <div class="main">
+            <div class="content">
+              {{ content }}
             </div>
           </div>
+
         </div>
 
     </body>

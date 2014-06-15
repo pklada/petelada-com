@@ -37,7 +37,18 @@ module.exports = function(grunt) {
       }
     },
     compass: {
-      dist: {}
+      dist: {
+        options: {
+          sassDir: 'sass',
+          cssDir: 'css'
+        }
+      },
+      jekyll:{
+        options: {
+          sassDir: 'sass',
+          cssDir: '_site/css'
+        }
+      }
     },
     watch: {
       html: {
@@ -50,14 +61,11 @@ module.exports = function(grunt) {
         tasks:['shell:jekyllBuild']
       },
       css: {
-        files:['sass/*.scss'],
+        files:['sass/*.scss',
+              'sass/core/*.scss',
+              'sass/modules/*.scss'
+        ],
         tasks:['compass']
-      },
-      options : {
-          spawn : false,
-          interrupt : true,
-          atBegin : true,
-          livereload : true
       }
     },
     shell : {
