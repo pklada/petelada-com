@@ -8,11 +8,12 @@ layout: default
 		<p class="date">{{ page.date | date_to_string }}</p>
 	</div>
 	<div class="post">
+		<a name="post"></a>
 		<h2>{{ page.title }}</h2>
 		{{ content }}
 	</div>
 	<div class="post-actions">
-		<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share this</a>
+		<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
 	</div>
 
 </div> <!-- / .post-container -->

@@ -74,6 +74,14 @@
 		color:$black;
 		font-weight:600;
 		font-variant:small-caps;
+		a{
+			color:$black;
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+				color:$black;
+			}
+		}
 	}
 	h3{
 		font-weight:600;
