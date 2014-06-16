@@ -1,1 +1,2 @@
-baseurl: ''
+domain: localhost:4000
+baseurl: ""

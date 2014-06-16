@@ -2,4 +2,5 @@ name: Pete Lada
 markdown: redcarpet
 pygments: true
 baseurl: /petelada-com
+domain: petelada.com
 excerpt_separator: <!--end-->

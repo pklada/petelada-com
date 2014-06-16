@@ -11,6 +11,11 @@ title: Pete Lada
 	</div>
 	<div class="post">
 		<h2>{{ post.title }}</h2>
+
+		<p>debug</p>
+		<p>base url {{site.baseurl}}</p>
+		{{post.url}}<br/>{{page.path}}<br/>{{page.url}}
+
 		{% if post.slug %}
 			{{ post.slug }}
 		{% else %}
@@ -19,7 +24,7 @@ title: Pete Lada
 	</div>
 	<div class="post-actions">
 		{% if post.has_excerpt %}<a href="{{post.url}}" class="button">Continue Reading</a>{% endif %}
-		<a href="http://twitter.com/share?text={{post.title}}&url={{ site.baseurl }}{{post.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
+		<a href="http://twitter.com/share?text={{post.title}}&url=http://{{site.domain}}{{post.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
 	</div>
 
 </div> <!-- / .post-container -->

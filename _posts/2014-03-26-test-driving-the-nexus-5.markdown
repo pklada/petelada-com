@@ -2,7 +2,6 @@
 layout: post
 title:  "Test Driving the Nexus 5"
 date:   2014-03-26 23:47:22
-categories: jekyll update
 has_excerpt: true
 ---
 

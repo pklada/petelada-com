@@ -73,6 +73,9 @@ module.exports = function(grunt) {
             command : "jekyll build --config _config.yml,_config-dev.yml"
         },
         jekyllServe : {
+            command : "jekyll serve --config _config.yml"
+        },
+        jekyllServeDev : {
             command : "jekyll serve --config _config.yml,_config-dev.yml"
         }
     },
@@ -88,6 +91,12 @@ module.exports = function(grunt) {
     concurrent: {
         target: {
             tasks: ['watch', 'shell:jekyllServe'],
+            options: {
+                logConcurrentOutput: true
+            }
+        },
+        dev: {
+            tasks: ['watch', 'shell:jekyllServeDev'],
             options: {
                 logConcurrentOutput: true
             }
@@ -115,5 +124,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['jshint', 'watch']);
   grunt.registerTask('serve', ['concurrent']);
+  grunt.registerTask('serve-dev', ['concurrent:dev']);
 
 };
