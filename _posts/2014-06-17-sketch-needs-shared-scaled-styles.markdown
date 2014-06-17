@@ -24,7 +24,7 @@ With that in mind, you simply cannot create nine-patch assets in Sketch and expe
 
 ![](http://cl.ly/image/061o0R2j1G1D/Image%202014-06-17%20at%2010.20.33%20AM.png)
 
-(As an aside, it would be even more amazing if there was somehow nine-patch support built into Sketch, but I digress.)
+*(As an aside, it would be even more amazing if there was somehow nine-patch support built into Sketch, but I digress.)*
 
 This is where scaled styles would be incredibly handy. On my first artboard, I layout the views as they would appear in the app, defining the base styles there. Then, on the secondary artboard where I maintain the shapes with their pre-baked 1px borders, I would link the styles from artboard one. Currently, I can only link the style to the first shape (or whichever shape matches the native density of the project). I then have to copy the style over to the other shapes, and scale down the styles manually. This sucks, and doens't allow me to quickly iterate on designs as any slight change to the base styles has to be manually copied and scaled across four distinct shapes per object. 
 
