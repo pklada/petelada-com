@@ -23,6 +23,16 @@
 			background: rgba(0,0,0,.15);
 		}
 	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: $black;
+		opacity: .3;
+	}
 
 	@include respond-to(handhelds) {
 		padding-top: 340px;

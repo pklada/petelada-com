@@ -732,16 +732,27 @@ h2 {
   width: 4px;
   background: rgba(0, 0, 0, 0.15);
 }
+/* line 26, ../sass/modules/_hero.scss */
+.hero:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2b2d21;
+  opacity: .3;
+}
 @media only screen and (max-width: 600px) {
   /* line 1, ../sass/modules/_hero.scss */
   .hero {
     padding-top: 340px;
   }
-  /* line 29, ../sass/modules/_hero.scss */
+  /* line 39, ../sass/modules/_hero.scss */
   .hero .content {
     padding: 0 40px;
   }
-  /* line 33, ../sass/modules/_hero.scss */
+  /* line 43, ../sass/modules/_hero.scss */
   .hero h2:before {
     display: none;
   }
@@ -1089,4 +1100,36 @@ button:hover,
 /* line 25, ../sass/modules/_buttons.scss */
 .button-weak:hover {
   color: #89887a;
+}
+
+/* line 1, ../sass/modules/_footer.scss */
+.footer {
+  background: #2b2d21 url("../images/hero.png") center center no-repeat;
+  margin-top: 3em;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+  position: relative;
+}
+/* line 7, ../sass/modules/_footer.scss */
+.footer .content {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+/* line 12, ../sass/modules/_footer.scss */
+.footer p {
+  margin-bottom: 0;
+  color: #fbfaf3;
+}
+/* line 17, ../sass/modules/_footer.scss */
+.footer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2b2d21;
+  opacity: .85;
 }
