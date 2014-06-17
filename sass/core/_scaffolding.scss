@@ -71,5 +71,11 @@ body{
 			background: transparentize($base, .95);
 			z-index:0;
 		}
+		@include respond-to(handhelds) {
+			&:before{
+				left:50%;
+				margin-left:-2px;
+			}
+		}
 	}
 }

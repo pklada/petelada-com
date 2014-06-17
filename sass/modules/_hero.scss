@@ -37,7 +37,7 @@
 	@include respond-to(handhelds) {
 		padding-top: 340px;
 		.content{
-			padding:0 ($base-mobile-padding*2);
+			padding:0 ($base-mobile-padding);
 		}
 		h2{
 			&:before{

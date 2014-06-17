@@ -22,3 +22,25 @@
     @media only screen and (min-width: $break-large) { @content; }
   }
 }
+
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+@mixin clearfix(){
+	&:before,
+	&:after{
+		content: " "; /* 1 */
+    	display: table; /* 2 */
+	}
+	&:after{
+		clear: both;
+	}
+}
