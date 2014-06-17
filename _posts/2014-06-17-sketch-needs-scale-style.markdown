@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Sketch Needs Style Scaling"
+title:  "Sketch Needs Shared Style Scaling"
 date:   2014-06-17 23:47:22
 has_excerpt: true
 ---
 
 I use Sketch on an almost daily basis now, near completely replacing Photoshop as my primary UI editing and creation tool. Overall it's great: it's performant, it affords context via multiple artboards in the same project, and it allows easy style sharing via linked styles and symbols. 
 
-There is one feature that would make my workflow more efficient by quite a margin which is currently missing: **scaled styles**. 
+There is one feature that would make my workflow more efficient by quite a margin which is currently missing: **scaled (shared) styles**. 
 
 <!--end-->
 
