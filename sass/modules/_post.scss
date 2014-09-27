@@ -7,6 +7,7 @@
 	position: relative;
 	margin-top:$large-margin-vertical;
 	margin-bottom:rhythm(1);
+
 	&:after{
 		content: "";
 		position: absolute;
@@ -37,19 +38,23 @@
 	margin-top:$large-margin-vertical;
 	padding-left:$base-padding;
 	@include clearfix();
+
 	@include respond-to(handhelds) {
 		width: auto;
 	}
+
 	p{
 		color:$base;
 		@include adjust-font-size-to(13px);
 		clear:left;
+
 		@include respond-to(handhelds) {
 			clear:none;
 			float:left;
 			padding-left:10px;
 		}
 	}
+
 	.post-icon{
 		display: block;
 		float: left;
@@ -58,17 +63,20 @@
 		background: transparent url(../images/post-icon-text.png) left no-repeat;
 		margin-bottom:$base-margin-vertical;
 		@include image-2x("../images/post-icon-text@2x.png", 52px, 42px);
+
 		@include respond-to(handhelds) {
 			width:26px;
 			height:21px;
 			background-size:26px 21px;
 		}
 	}
+
 	@include respond-to(handhelds) {
 		position: relative;
 		top:0;
 		left:0;
 		padding-left:$base-mobile-padding;
+
 		.post-icon{
 			margin-bottom:rhythm(.5);
 		}
@@ -82,6 +90,7 @@
 	padding-right:$base-padding;
 	margin-top:$large-margin-vertical;
 	margin-bottom:$large-margin-vertical;
+
 	h2{
 		//text-transform: uppercase;
 		@include adjust-font-size-to(34px);
@@ -89,19 +98,24 @@
 		color:$black;
 		font-weight:600;
 		font-variant:small-caps;
+
 		a{
 			color:$black;
 			text-decoration: none;
+
 			&:hover{
 				text-decoration: underline;
 				color:$black;
 			}
 		}
 	}
+
 	h3{
 		font-weight:600;
 	}
+
 	p{
+
 		a{
 			text-decoration: underline;
 		}
@@ -118,6 +132,7 @@
 		margin-top:0;
 		padding-left:$base-mobile-padding;
 		padding-right:$base-mobile-padding;
+
 		h2{
 			margin-top: 0;
 		}
@@ -130,6 +145,7 @@
 	padding-right:$base-padding;
 	margin-top:$large-margin-vertical;
 	margin-bottom:$large-margin-vertical*1.5;
+
 	@include respond-to(handhelds) {
 		border-top:1px solid #eee;
 		margin-left:0;
@@ -138,6 +154,7 @@
 		padding-left:$base-mobile-padding;
 		padding-right:$base-mobile-padding;
 		margin-bottom: 0;
+		
 		a{
 			display: block;
 			margin-bottom: rhythm(1);
