@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Framer for Prototyping"
+title:  "Prototyping with Framer at Guidebook"
 date:   2014-11-19
 custom-button-url: "/assets/guidebook-search.framer.zip"
 custom-button-title: "Download Framer file"
