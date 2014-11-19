@@ -5,6 +5,7 @@ date:   2014-11-19
 custom-button-url: "/assets/guidebook-search.framer.zip"
 custom-button-title: "Download Framer file"
 custom-button-class: button-download
+img: "/images/guidebook-search.gif" 
 ---
 
 I have been using [Framer JS](http://framerjs.com) for prototyping for a while now, but have recently started to make a concerted effort to use it on a daily basis to improve my interaction prototypes. I have quickly found it to be an invaluable tool &mdash; something which makes communicating with, and inspiring, developers a simple task. 

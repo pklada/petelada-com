@@ -2,6 +2,7 @@
 layout: post
 title:  "Thoughts on the iPhone 6"
 date:   2014-09-26
+img: "/images/img_iphone6_reachability.png"
 has_excerpt: true
 ---
 
