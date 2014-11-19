@@ -20,6 +20,9 @@ title: Pete Lada
 	</div>
 	<div class="post-actions">
 		{% if post.has_excerpt %}<a href="{{site.baseurl}}{{post.url}}#post" class="button">Continue Reading</a>{% endif %}
+		{% if post.custom-button-url %}
+		<a href="{{post.custom-button-url}}" class="button {{post.custom-button-class}}"><i class="fa fa-cloud-download"></i> {{post.custom-button-title}}</a>
+		{% endif %}
 		<a href="http://twitter.com/share?text={{post.title}}&url=http://{{site.domain}}{{post.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
 	</div>
 
