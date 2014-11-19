@@ -19,8 +19,13 @@
         <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" />
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <!-- fb open grah -->
+        <meta property="og:title" content="{{page.title}}" />
+        <meta property="og:url" content="{{site.baseurl}}{{post.url}}" />
+
         {% if page.img %}
         <link rel="image_src" href="http://petelada.com{{ page.img }}" />
+        <meta property="og:image" content="http://petelada.com{{ page.img }}" />
         {% endif %}
 
     </head>
