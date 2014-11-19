@@ -19,6 +19,6 @@ I wanted to share some of my work with the community, so I put together an inter
     <p class="img_caption">"Guide search" interaction prototype for Guidebook, created with Framer.</p>
 </div>
 
-The prototype consists of four primary interactions: searching, redeeming a code, scanning a code, and scrolling the view. The view, to give some context, is an experimental way to display your guides within Guidebook.
+The prototype consists of five primary interactions: searching, redeeming a code, scanning a code, pulling to refresh, and scrolling the view. The view, to give some context, is an experimental way to display your guides within Guidebook.
 
 Download the Framer file with the button below. The code is not super organized or well documented, but hopefully it helps someone learn a bit about what you can accomplish with the tool.
