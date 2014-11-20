@@ -11,7 +11,13 @@ title: Pete Lada
 	</div>
 	<div class="post">
 		<h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-
+		{% if page.tags %}
+		<div class="tags">
+			{% for tag in page.tags %}
+			<div class="tags_tag">#{{ tag }}</div>
+			{% endfor %}
+		</div>
+		{% endif %}
 		{% if post.slug %}
 			{{ post.slug }}
 		{% else %}
