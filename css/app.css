@@ -1289,3 +1289,22 @@ button:hover,
     margin-top: 0;
   }
 }
+
+/* line 3, ../sass/modules/tags.scss */
+.tags {
+  margin-bottom: 1.5em;
+}
+
+/* line 7, ../sass/modules/tags.scss */
+.tags_tag {
+  display: inline-block;
+  font-size: 0.75em;
+  line-height: 2em;
+  color: #89887A;
+  margin-right: 10px;
+  border: 1px solid #e9e9e6;
+  padding: 1px 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
