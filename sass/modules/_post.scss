@@ -196,7 +196,8 @@
 }
 
 .post_kudos_label_text {
-
+	margin-left: 3px;
+	
 	@include respond-to(handhelds) {
 		display: none;
 	}	

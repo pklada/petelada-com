@@ -1152,6 +1152,10 @@ h2 {
   }
 }
 
+/* line 198, ../sass/modules/_post.scss */
+.post_kudos_label_text {
+  margin-left: 3px;
+}
 @media only screen and (max-width: 600px) {
   /* line 198, ../sass/modules/_post.scss */
   .post_kudos_label_text {
@@ -1159,7 +1163,7 @@ h2 {
   }
 }
 
-/* line 205, ../sass/modules/_post.scss */
+/* line 206, ../sass/modules/_post.scss */
 .post_kudos_label {
   font-size: 0.8125em;
   line-height: 1.84615em;
@@ -1167,12 +1171,12 @@ h2 {
   padding: 5px 10px;
   color: #2B2D21;
 }
-/* line 211, ../sass/modules/_post.scss */
+/* line 212, ../sass/modules/_post.scss */
 .post_kudos_label > .fa {
   color: #89887A;
 }
 
-/* line 216, ../sass/modules/_post.scss */
+/* line 217, ../sass/modules/_post.scss */
 .post_kudos_count {
   font-size: 0.8125em;
   line-height: 1.84615em;
@@ -1181,30 +1185,30 @@ h2 {
   border-left: 1px solid rgba(137, 136, 122, 0.25);
   color: #2B2D21;
 }
-/* line 223, ../sass/modules/_post.scss */
+/* line 224, ../sass/modules/_post.scss */
 .no-kudos .post_kudos_count {
   opacity: .5;
 }
 
-/* line 229, ../sass/modules/_post.scss */
+/* line 230, ../sass/modules/_post.scss */
 .kudos-given {
   background: #89887A;
 }
-/* line 232, ../sass/modules/_post.scss */
+/* line 233, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_label {
   color: #FBFAF3;
 }
-/* line 235, ../sass/modules/_post.scss */
+/* line 236, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_label > .fa {
   color: #FBFAF3;
 }
-/* line 240, ../sass/modules/_post.scss */
+/* line 241, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_count {
   color: #FBFAF3;
   font-weight: bold;
   border-left-color: #6e6d62;
 }
-/* line 246, ../sass/modules/_post.scss */
+/* line 247, ../sass/modules/_post.scss */
 .kudos-given:hover {
   background: #89887A;
 }

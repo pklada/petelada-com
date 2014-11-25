@@ -5,7 +5,7 @@ layout: default
 <div class="post-container" data-post-id="{{page.id}}">
 
 	<a class="post_kudos no-kudos" href>
-		<span class="post_kudos_label"><span class="fa fa-thumbs-up mr5"></span> <span class="post_kudos_label_text">Nice!</span></span>
+		<span class="post_kudos_label"><span class="fa fa-thumbs-up mr5"></span> <span class="post_kudos_label_text">{% if page.like_text %}{{ page.like_text}}{% else %}Nice!{% endif %}</span></span>
 		<span class="post_kudos_count">0</span>
 	</a>
 
