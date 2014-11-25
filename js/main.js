@@ -30,6 +30,9 @@ Kudos.prototype = {
       _that.renderKudos(kud+1);
       $.cookie('kudos-' + _that.postID, 'kudos', { expires: 365, path: '/' });
 
+      // track the click in GA
+      ga('send', 'event', 'kudosButton', 'click', 'kudos-' + _that.postID);
+
       _that.disableKudos();
     });
   },
