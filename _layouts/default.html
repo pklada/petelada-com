@@ -19,9 +19,19 @@
         <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" />
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="{{site.baseurl}}/vendor/js/jquery.cookie.js"></script>
+
         <!-- fb open grah -->
         <meta property="og:title" content="{{page.title}}" />
         <meta property="og:url" content="{{site.baseurl}}{{post.url}}" />
+
+        <!-- firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+
+        <!-- JS -->
+        <script src="{{ site.baseurl }}/js/main.js"></script>
 
         {% if page.img %}
         <link rel="image_src" href="http://petelada.com{{ page.img }}" />
