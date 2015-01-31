@@ -24,8 +24,6 @@ The Markup
 ---
 Let's start with the HTML. The toggle is, at it's core, an input checkbox. This is how we store the state of the toggle without using Javascript -- the input element stores it's `checked` state internally. 
 
-<!--end-->
-
 The markup consists of a container `label`, the input element, and some additional elements to create the toggle background and switch. 
 
 <div class="code-block">
@@ -43,6 +41,8 @@ The markup consists of a container `label`, the input element, and some addition
 </label>
 {% endhighlight %}
 </div>
+
+<!--end-->
 
 I'm using a CSS framework we developed within Guidebook, but essentially `.tgl` is the module name, and all children elements must be preceded with that class name. Modifiers are indicated by a dash (`-`). 
 
