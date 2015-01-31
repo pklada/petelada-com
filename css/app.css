@@ -579,7 +579,7 @@ a:hover {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 106, ../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.1.0.alpha.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -1065,6 +1065,40 @@ h2 {
   text-decoration: underline;
 }
 /* line 125, ../sass/modules/_post.scss */
+.post .code-block_title {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: white;
+  position: absolute;
+  top: -10.5px;
+  left: 10px;
+  font-size: 0.6875em;
+  line-height: 2.18182em;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: #707267;
+}
+/* line 138, ../sass/modules/_post.scss */
+.post .code-block {
+  padding: 3em 0;
+  margin: 3em 0;
+  border-top: 1px solid #dfe0dc;
+  border-bottom: 1px solid #dfe0dc;
+  position: relative;
+}
+/* line 146, ../sass/modules/_post.scss */
+.post pre {
+  position: relative;
+  margin: 0;
+}
+/* line 151, ../sass/modules/_post.scss */
+.post p > code {
+  font-weight: 500;
+  border: 1px solid #dfe0dc;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+/* line 158, ../sass/modules/_post.scss */
 .post img {
   max-width: 100%;
   display: block;
@@ -1078,13 +1112,13 @@ h2 {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 137, ../sass/modules/_post.scss */
+  /* line 170, ../sass/modules/_post.scss */
   .post h2 {
     margin-top: 0;
   }
 }
 
-/* line 143, ../sass/modules/_post.scss */
+/* line 176, ../sass/modules/_post.scss */
 .post-actions {
   margin-left: 130px;
   padding-left: 40px;
@@ -1093,7 +1127,7 @@ h2 {
   margin-bottom: 4.5em;
 }
 @media only screen and (max-width: 600px) {
-  /* line 143, ../sass/modules/_post.scss */
+  /* line 176, ../sass/modules/_post.scss */
   .post-actions {
     border-top: 1px solid #eee;
     margin-left: 0;
@@ -1103,7 +1137,7 @@ h2 {
     padding-right: 20px;
     margin-bottom: 0;
   }
-  /* line 159, ../sass/modules/_post.scss */
+  /* line 192, ../sass/modules/_post.scss */
   .post-actions a {
     display: block;
     margin-bottom: 1.5em;
@@ -1112,7 +1146,7 @@ h2 {
   }
 }
 
-/* line 169, ../sass/modules/_post.scss */
+/* line 202, ../sass/modules/_post.scss */
 .post_kudos {
   position: absolute;
   right: 40px;
@@ -1132,11 +1166,11 @@ h2 {
   transform: scale(1);
   outline: none !important;
 }
-/* line 182, ../sass/modules/_post.scss */
+/* line 215, ../sass/modules/_post.scss */
 .post_kudos:hover {
   background: #FBFAF3;
 }
-/* line 186, ../sass/modules/_post.scss */
+/* line 219, ../sass/modules/_post.scss */
 .post_kudos.is-pressed {
   -moz-transform: scale(0.95);
   -ms-transform: scale(0.95);
@@ -1144,7 +1178,7 @@ h2 {
   transform: scale(0.95);
 }
 @media only screen and (max-width: 600px) {
-  /* line 169, ../sass/modules/_post.scss */
+  /* line 202, ../sass/modules/_post.scss */
   .post_kudos {
     top: 3em;
     margin-top: -10px;
@@ -1152,18 +1186,18 @@ h2 {
   }
 }
 
-/* line 198, ../sass/modules/_post.scss */
+/* line 231, ../sass/modules/_post.scss */
 .post_kudos_label_text {
   margin-left: 3px;
 }
 @media only screen and (max-width: 600px) {
-  /* line 198, ../sass/modules/_post.scss */
+  /* line 231, ../sass/modules/_post.scss */
   .post_kudos_label_text {
     display: none;
   }
 }
 
-/* line 206, ../sass/modules/_post.scss */
+/* line 239, ../sass/modules/_post.scss */
 .post_kudos_label {
   font-size: 0.8125em;
   line-height: 1.84615em;
@@ -1171,12 +1205,12 @@ h2 {
   padding: 5px 10px;
   color: #2B2D21;
 }
-/* line 212, ../sass/modules/_post.scss */
+/* line 245, ../sass/modules/_post.scss */
 .post_kudos_label > .fa {
   color: #89887A;
 }
 
-/* line 217, ../sass/modules/_post.scss */
+/* line 250, ../sass/modules/_post.scss */
 .post_kudos_count {
   font-size: 0.8125em;
   line-height: 1.84615em;
@@ -1185,30 +1219,30 @@ h2 {
   border-left: 1px solid rgba(137, 136, 122, 0.25);
   color: #2B2D21;
 }
-/* line 224, ../sass/modules/_post.scss */
+/* line 257, ../sass/modules/_post.scss */
 .no-kudos .post_kudos_count {
   opacity: .5;
 }
 
-/* line 230, ../sass/modules/_post.scss */
+/* line 263, ../sass/modules/_post.scss */
 .kudos-given {
   background: #89887A;
 }
-/* line 233, ../sass/modules/_post.scss */
+/* line 266, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_label {
   color: #FBFAF3;
 }
-/* line 236, ../sass/modules/_post.scss */
+/* line 269, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_label > .fa {
   color: #FBFAF3;
 }
-/* line 241, ../sass/modules/_post.scss */
+/* line 274, ../sass/modules/_post.scss */
 .kudos-given .post_kudos_count {
   color: #FBFAF3;
   font-weight: bold;
   border-left-color: #6e6d62;
 }
-/* line 247, ../sass/modules/_post.scss */
+/* line 280, ../sass/modules/_post.scss */
 .kudos-given:hover {
   background: #89887A;
 }

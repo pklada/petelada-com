@@ -122,6 +122,39 @@
 		}
 	}
 
+	.code-block_title {
+		display: inline-block;
+		padding: 5px 10px;
+		background-color: white;
+		position: absolute;
+		top: -((10px+11px)/2);
+		left: 10px;
+		@include adjust-font-size-to(11px);
+		line-height: 11px;
+		text-transform: uppercase;
+		color: $gray;
+	}
+
+	.code-block {
+		padding: rhythm(2) 0;
+		margin: rhythm(2) 0;
+		border-top: 1px solid $faint-gray;
+		border-bottom: 1px solid $faint-gray;
+		position: relative;
+	}
+
+	pre {
+		position: relative;
+		margin: 0;
+	}
+
+	p > code {
+		font-weight: 500;
+		border: 1px solid $faint-gray;
+		padding: 1px 4px;
+		border-radius: 3px;
+	}
+
 	img{
 		max-width:100%;
 		display: block;
