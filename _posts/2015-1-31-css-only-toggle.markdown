@@ -3,7 +3,7 @@ layout: post
 title:  "How to create animated and stateful toggle using only CSS (no Javascript!)"
 date:   2015-1-31
 custom-button-url: "http://codepen.io/anon/pen/jEGOvY"
-custom-button-title: "View project on Codepen"
+custom-button-title: "View on Codepen"
 custom-button-class: button-view
 img: "/images/toggle/toggle.gif"
 tags: ['css', 'no-js', 'guidebook']
