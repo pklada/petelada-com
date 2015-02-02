@@ -24,7 +24,7 @@ The Markup
 ---
 Let's start with the HTML. The toggle is, at it's core, an input checkbox. This is how we store the state of the toggle without using Javascript -- the input element stores it's `checked` state internally. 
 
-The markup consists of a container `label`, the input element, and some additional elements to create the toggle background and switch. 
+The markup consists of a container `label`, an `input` element of type `checkbox`, and some additional elements to create the toggle background and switch. 
 
 <div class="code-block">
 <span class="code-block_title">HTML</span>
@@ -50,7 +50,7 @@ So, we have a `body` element which essentially contains all the markup used for 
 
 The CSS
 ---
-We use SCSS at Guidebook so this part is written in SCSS. I won't go into too much detail about how each element is handled, but I want to cover the most important part of the CSS which is also the part which causes the toggle to animate. 
+We use SCSS at Guidebook so this part is written in SCSS. I won't go into too much detail about how each element is handled, but I want to cover the most important part of the CSS which also happens to animate the toggle. 
 
 <div class="code-block">
 <span class="code-block_title">SCSS</span>
@@ -75,11 +75,11 @@ We use SCSS at Guidebook so this part is written in SCSS. I won't go into too mu
 {% endhighlight %}
 </div>
 
-The key part here is the `:checked ~ .tgl_body` line. What this does, is when the `input` element has a state of `:checked`, the elements within the `.tgl_body` class take on the defined rules. Notice the `~` selector, which selects, in this case, the `.tgl_body` class only if it is preceeded by a `:checked` element. 
+The key part here is the `:checked ~ .tgl_body` line. The means that when the `input` element has a state of `:checked`, the elements within the `.tgl_body` class take on the defined rules. Notice the `~` selector, which selects, in this case, the `.tgl_body` class only if it is preceeded by a `:checked` element. 
 
 Its important to note that clicking anywhere on the parent `<label>` element will cause the child `<input>` element to either check or uncheck. This is native behavior of HTML.
 
-When these rules come into play, the background sections, as well as the switch, animate either left or right. I of course defined some transitions on the `switch` and `bgd` elements in order to have them animate properly. The satisfying 'bounce' effect is gained by using a cubic-bezier curver, rather than an ease or linear curve. 
+When these rules come into play, the background sections, as well as the switch, animate either left or right. I of course defined some transitions on the `switch` and `bgd` elements in order to have them animate properly. The satisfying 'bounce' effect is gained by using a cubic-bezier curve, rather than an ease or linear curve. 
 
 <div class="code-block">
 <span class="code-block_title">SCSS</span>
