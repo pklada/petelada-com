@@ -2,7 +2,7 @@
 layout: post
 title:  "How to create animated and stateful toggle using only CSS (no Javascript!)"
 date:   2015-1-31
-custom-button-url: "http://codepen.io/anon/pen/jEGOvY"
+custom-button-url: "http://codepen.io/pklada/pen/jEGwMB"
 custom-button-title: "View on Codepen"
 custom-button-class: button-view
 img: "/images/toggle/toggle.gif"
@@ -93,7 +93,7 @@ $anim-speed-normal: 250ms;
 {% endhighlight %}
 </div>
 
-[I've recreated the full toggle in a Codepen](http://codepen.io/anon/pen/jEGOvY). Let me know if it needs more explanation and I'll be happy to offer some. 
+[I've recreated the full toggle in a Codepen](http://codepen.io/pklada/pen/jEGwMB). Let me know if it needs more explanation and I'll be happy to offer some. 
 
 
 
