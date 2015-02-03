@@ -97,8 +97,8 @@
 		@include adjust-font-size-to(34px);
 		clear:both;
 		color:$black;
-		font-weight:600;
-		font-variant:small-caps;
+		font-weight:500;
+		//font-variant:small-caps; disable for now, causes issues in FF
 
 		a{
 			color:$black;

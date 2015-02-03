@@ -1043,8 +1043,7 @@ h2 {
   line-height: 1.41176em;
   clear: both;
   color: #2B2D21;
-  font-weight: 600;
-  font-variant: small-caps;
+  font-weight: 500;
 }
 /* line 103, ../sass/modules/_post.scss */
 .post h2 a {
