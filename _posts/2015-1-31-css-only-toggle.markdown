@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to create animated and stateful toggle using only CSS (no Javascript!)"
+title:  "How to create an animated and stateful toggle using only CSS (no Javascript!)"
 date:   2015-1-31
 custom-button-url: "http://codepen.io/pklada/pen/jEGwMB"
 custom-button-title: "View on Codepen"
