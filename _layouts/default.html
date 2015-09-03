@@ -25,7 +25,14 @@
 
         <!-- fb open grah -->
         <meta property="og:title" content="{{page.title}}" />
-        <meta property="og:url" content="{{site.baseurl}}{{post.url}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://{{site.domain}}{{page.url}}" />
+
+        <!-- twitter meta -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@pklada" />
+        <meta name="twitter:title" content="{{page.title}}" />
+        <meta name="twitter:description" content="I am a designer and front-end developer. I spend my time fussing with pixels in <del>Photoshop</del> Sketch or pretending I know how to use vim. I live in the cheerful Bay Area and love coffee." />
 
         <!-- firebase -->
         <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
@@ -36,6 +43,7 @@
         {% if page.img %}
         <link rel="image_src" href="http://petelada.com{{ page.img }}" />
         <meta property="og:image" content="http://petelada.com{{ page.img }}" />
+        <meta name="twitter:image" content="http://petelada.com{{ page.img }}" />
         {% endif %}
 
 
