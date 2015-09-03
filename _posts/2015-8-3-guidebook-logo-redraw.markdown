@@ -2,7 +2,7 @@
 layout: post
 title:  "Guidebook Logo Redraw"
 date:   2015-8-3
-img: "/images/guidebook-logo-redraw.gif"
+img: "/images/logo-web-image.png"
 custom-button-url: "https://dribbble.com/shots/2228016-Guidebook-logo-redraw"
 custom-button-title: "View on Dribbble"
 tags: ['logo', 'guidebook']
