@@ -539,6 +539,21 @@ table {
   clear: both;
 }
 
+/* line 48, ../sass/core/_helpers.scss */
+.text-align-left {
+  text-align: left;
+}
+
+/* line 52, ../sass/core/_helpers.scss */
+.text-align-right {
+  text-align: right;
+}
+
+/* line 56, ../sass/core/_helpers.scss */
+.text-align-center {
+  text-align: center;
+}
+
 /* line 1, ../sass/core/_core.scss */
 *,
 *:before,
@@ -579,7 +594,7 @@ a:hover {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 106, ../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../Users/Peter/.rvm/gems/ruby-2.2.1/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -716,6 +731,37 @@ h2 {
     left: 50%;
     margin-left: -2px;
   }
+}
+
+/* line 2, ../sass/core/_layout.scss */
+.l-table-cell {
+  display: table-cell;
+}
+
+/* line 6, ../sass/core/_layout.scss */
+.l-table {
+  display: table;
+}
+
+/* line 10, ../sass/core/_layout.scss */
+.l-table-row {
+  display: table-row;
+}
+
+/* line 14, ../sass/core/_layout.scss */
+.l-full-width {
+  width: 100%;
+  min-width: 100%;
+}
+
+/* line 19, ../sass/core/_layout.scss */
+.l-quarter {
+  width: 25%;
+}
+
+/* line 23, ../sass/core/_layout.scss */
+.l-half {
+  width: 50%;
 }
 
 /* line 1, ../sass/modules/_hero.scss */
@@ -1122,8 +1168,8 @@ h2 {
   margin-left: 130px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 3em;
-  margin-bottom: 4.5em;
+  margin-top: 0;
+  margin-bottom: 3em;
 }
 @media only screen and (max-width: 600px) {
   /* line 176, ../sass/modules/_post.scss */
@@ -1250,20 +1296,20 @@ h2 {
 button,
 .button,
 .button-weak {
+  display: inline-block;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk1OTQ4OCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzg5ODg3YSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #959488), color-stop(100%, #89887a));
   background-image: -moz-linear-gradient(top, #959488, #89887a);
   background-image: -webkit-linear-gradient(top, #959488, #89887a);
   background-image: linear-gradient(to bottom, #959488, #89887a);
-  padding: 15px 25px;
+  padding: 10px 25px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid #7c7b6e;
   color: #FBFAF3;
   cursor: pointer;
-  margin-right: 20px;
   -moz-transition: all 200ms cubic-bezier(0.34, 1.61, 0.7, 1);
   -o-transition: all 200ms cubic-bezier(0.34, 1.61, 0.7, 1);
   -webkit-transition: all 200ms cubic-bezier(0.34, 1.61, 0.7, 1);
@@ -1273,14 +1319,14 @@ button,
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-/* line 16, ../sass/modules/_buttons.scss */
+/* line 15, ../sass/modules/_buttons.scss */
 button:hover,
 .button:hover,
 .button-weak:hover {
   color: #FBFAF3;
   opacity: .9;
 }
-/* line 21, ../sass/modules/_buttons.scss */
+/* line 20, ../sass/modules/_buttons.scss */
 button.is-pressed,
 .button.is-pressed,
 .is-pressed.button-weak {
@@ -1289,8 +1335,26 @@ button.is-pressed,
   -webkit-transform: scale(0.95);
   transform: scale(0.95);
 }
+/* line 24, ../sass/modules/_buttons.scss */
+button + .button, button + .button-weak,
+.button + .button,
+.button-weak + .button,
+.button + .button-weak,
+.button-weak + .button-weak {
+  margin-left: 20px;
+}
+@media only screen and (max-width: 600px) {
+  /* line 29, ../sass/modules/_buttons.scss */
+  button + .button, button + .button-weak,
+  .button + .button,
+  .button-weak + .button,
+  .button + .button-weak,
+  .button-weak + .button-weak {
+    margin-left: 0;
+  }
+}
 
-/* line 27, ../sass/modules/_buttons.scss */
+/* line 36, ../sass/modules/_buttons.scss */
 .button-weak {
   background-image: none;
   -moz-box-shadow: inset 0 1px 0 #89887A, inset 0 -1px 0 #89887A, inset 1px 0 0 #89887A, inset -1px 0 0 #89887A;
@@ -1298,9 +1362,19 @@ button.is-pressed,
   box-shadow: inset 0 1px 0 #89887A, inset 0 -1px 0 #89887A, inset 1px 0 0 #89887A, inset -1px 0 0 #89887A;
   color: #89887A;
 }
-/* line 33, ../sass/modules/_buttons.scss */
+/* line 42, ../sass/modules/_buttons.scss */
 .button-weak:hover {
   color: #89887A;
+}
+
+/* line 47, ../sass/modules/_buttons.scss */
+.button-disabled {
+  opacity: .5;
+  cursor: pointer !important;
+}
+/* line 51, ../sass/modules/_buttons.scss */
+.button-disabled:hover {
+  opacity: .5;
 }
 
 /* line 1, ../sass/modules/_footer.scss */
@@ -1459,4 +1533,45 @@ button.is-pressed,
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+}
+
+/* line 3, ../sass/modules/_pagination.scss */
+.pag {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  display: table;
+  width: 100%;
+}
+@media only screen and (max-width: 600px) {
+  /* line 11, ../sass/modules/_pagination.scss */
+  .pag .l-table-cell {
+    width: 50%;
+  }
+  /* line 14, ../sass/modules/_pagination.scss */
+  .pag .l-table-cell:first-child {
+    padding-left: 25px;
+    padding-right: 10px;
+  }
+  /* line 19, ../sass/modules/_pagination.scss */
+  .pag .l-table-cell:last-child {
+    padding-right: 25px;
+    padding-left: 10px;
+  }
+  /* line 25, ../sass/modules/_pagination.scss */
+  .pag .button, .pag .button-weak {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* line 32, ../sass/modules/_pagination.scss */
+.pag_number {
+  text-align: center;
+  color: #89887A;
+}
+@media only screen and (max-width: 600px) {
+  /* line 32, ../sass/modules/_pagination.scss */
+  .pag_number {
+    display: none;
+  }
 }

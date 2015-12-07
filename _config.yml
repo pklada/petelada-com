@@ -1,6 +1,11 @@
 name: Pete Lada
-markdown: redcarpet
-pygments: true
+markdown: kramdown
+redcarpet:
+  extensions: []
+highlighter: true
 baseurl: ''
 domain: petelada.com
 excerpt_separator: <!--end-->
+paginate: 5
+paginate_path: "/:num/"
+gems: [jekyll-paginate]

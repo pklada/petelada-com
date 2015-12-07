@@ -3,7 +3,7 @@ layout: default
 title: Pete Lada
 ---
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 <div class="post-container" data-post-id="{{ post.id }}">
 
 	<a class="post_kudos no-kudos" href>
@@ -24,11 +24,7 @@ title: Pete Lada
 			{% endfor %}
 		</div>
 		{% endif %}
-		{% if post.slug %}
-			{{ post.slug }}
-		{% else %}
-			{{ post.excerpt }}
-		{% endif %}
+		{{ post.excerpt }}
 	</div>
 	<div class="post-actions">
 		{% if post.has_excerpt %}<a href="{{site.baseurl}}{{post.url}}#post" class="button">Continue Reading</a>{% endif %}
@@ -40,3 +36,26 @@ title: Pete Lada
 
 </div> <!-- / .post-container -->
 {% endfor %}
+
+<!-- Pagination links -->
+<div class="pag">
+	<div class="l-table-row">
+		<div class="l-table-cell l-quarter">
+		  {% if paginator.previous_page %}
+		    <a href="{{ paginator.previous_page_path }}" class="button">Previous</a>
+		  {% else %}
+		    <span class="button button-disabled">Previous</span>
+		  {% endif %}
+		</div>
+		<div class="l-table-cell pag_number l-half">
+			<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+		</div>
+		<div class="l-table-cell l-quarter text-align-right">
+			{% if paginator.next_page %}
+		    <a href="{{ paginator.next_page_path }}" class="button">Next</a>
+		  {% else %}
+		    <span class="button button-disabled ">Next</span>
+		  {% endif %}
+		</div>
+	</div>
+</div>

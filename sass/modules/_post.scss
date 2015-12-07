@@ -177,8 +177,8 @@
 	margin-left:130px;
 	padding-left:$base-padding;
 	padding-right:$base-padding;
-	margin-top:$large-margin-vertical;
-	margin-bottom:$large-margin-vertical*1.5;
+	margin-top: 0;
+	margin-bottom:$large-margin-vertical;
 
 	@include respond-to(handhelds) {
 		border-top:1px solid #eee;
@@ -188,7 +188,7 @@
 		padding-left:$base-mobile-padding;
 		padding-right:$base-mobile-padding;
 		margin-bottom: 0;
-		
+
 		a{
 			display: block;
 			margin-bottom: rhythm(1);
@@ -230,10 +230,10 @@
 
 .post_kudos_label_text {
 	margin-left: 3px;
-	
+
 	@include respond-to(handhelds) {
 		display: none;
-	}	
+	}
 }
 
 .post_kudos_label {
