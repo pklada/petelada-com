@@ -3,11 +3,11 @@
 	z-index: 1;
 	background-size:cover;
 
-	.content{
+	.content {
 		padding-left:130px + $base-padding;
 	}
 
-	h2{
+	h2 {
 		color:white;
 		text-shadow:0 2px 4px rgba(0,0,0,.5);
 		margin:0;
@@ -36,6 +36,14 @@
 		opacity: .3;
 	}
 
+	.collapsed-header & {
+		height: $collapsed-splash-peekthrough-height;
+
+		h2 {
+			display: none;
+		}
+	}
+
 	@include respond-to(handhelds) {
 		.content{
 			padding:0 ($base-mobile-padding);
@@ -53,4 +61,52 @@
 .splash {
 	background:$black url('../images/hero.png') center center no-repeat;
 	background-size: cover;
+}
+
+.collapsed-header {
+	.splash {
+		position: fixed;
+		z-index: 999;
+		left: 0;
+		right: 0;
+		top: 0;
+		@include transform(translateY(-1 * $collapsed-header-height - $collapsed-splash-peekthrough-height - 5));
+		@include box-shadow(0 2px 4px rgba(0, 0, 0, .2));
+
+		&.is-ready {
+			@include transition(transform ease 350ms);
+
+			.header {
+				@include transition(transform ease 350ms, opacity ease 350ms);
+			}
+		}
+
+		&.is-visible {
+			@include transform(translateY(0));
+
+			.header {
+				@include transform(translateY(0));
+				opacity: 1;
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom:0;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background: rgba(0,0,0,.1);
+		}
+
+	}
+
+	.header {
+		@include transform(translateY(-1 * $collapsed-header-height));
+		@include transition-delay(140ms);
+		@include box-shadow(0 2px 4px rgba(0, 0, 0, .2));
+		opacity: .2;
+	}
+
 }

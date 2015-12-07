@@ -56,3 +56,13 @@
 .text-align-center {
   text-align: center;
 }
+
+.js-mobile-test {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  
+  @include respond-to(handhelds) {
+    visibility: visible;
+  }
+}

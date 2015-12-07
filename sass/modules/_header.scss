@@ -5,6 +5,11 @@
 	h1{
 		color: $black;
 		margin-bottom: rhythm(.4, 38px);
+
+		.collapsed-header & {
+			@include adjust-font-size-to(20px);
+			margin-bottom: 0;
+		}
 	}
 
 	@include respond-to(handhelds) {
@@ -40,6 +45,24 @@
 		text-indent: -9999em;
 		background:transparent url('../images/pete-lada-icon.png') center center no-repeat;
 		@include image-2x("../images/pete-lada-icon@2x.png", 70px, 70px);
+	}
+
+	.collapsed-header & {
+		$collapsed-icon-size: $collapsed-header-height - 30;
+		margin-top: -1 * ($collapsed-icon-size/2);
+		padding: 0;
+		left: 85px;
+		background: transparent;
+
+		&:after {
+			display: none;
+		}
+
+		a {
+			height: $collapsed-icon-size;
+			width: $collapsed-icon-size;
+			background-size: $collapsed-icon-size $collapsed-icon-size;
+		}
 	}
 
 	@include respond-to(handhelds) {
@@ -101,7 +124,7 @@
 		display: block;
 		float: none;
 		margin-right: 0;
-		
+
 		ul{
 			text-align: center;
 			display: block;

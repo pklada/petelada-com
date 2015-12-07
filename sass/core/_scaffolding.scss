@@ -1,4 +1,3 @@
-
 .header{
 	position: relative;
 	top: 0;
@@ -8,6 +7,12 @@
 
 	.content{
 		height:200px;
+	}
+
+	.collapsed-header & {
+		.content {
+			height: $collapsed-header-height;
+		}
 	}
 
 	@include respond-to(handhelds) {
@@ -26,6 +31,13 @@
 	top:50%;
 	right:0;
 	margin-top:-42.5px;
+
+	.collapsed-header & {
+		height: $collapsed-header-height;
+		top: 0;
+		margin-top: 0;
+		padding-top: 13px;
+	}
 
 	@include respond-to(handhelds) {
 		position: relative;
@@ -56,7 +68,7 @@
 }
 
 .main{
-	
+
 	.content{
 
 		&:before{
