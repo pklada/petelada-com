@@ -920,6 +920,10 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   opacity: .2;
 }
+/* line 112, ../sass/modules/_hero.scss */
+.collapsed-header .title_coffee {
+  display: block;
+}
 
 /* line 1, ../sass/modules/_header.scss */
 .header {
@@ -936,19 +940,36 @@ h2 {
   margin-bottom: 0.25263em;
 }
 /* line 9, ../sass/modules/_header.scss */
+.header h1 .title_coffee {
+  display: none;
+}
+/* line 13, ../sass/modules/_header.scss */
+.header h1 .title_deemphasized {
+  opacity: .8;
+}
+/* line 17, ../sass/modules/_header.scss */
 .collapsed-header .header h1 {
   font-size: 1.25em;
   line-height: 1.2em;
   margin-bottom: 0;
 }
+/* line 21, ../sass/modules/_header.scss */
+.collapsed-header .header h1 .title_coffee {
+  display: inline;
+  margin-left: 5px;
+}
+/* line 26, ../sass/modules/_header.scss */
+.collapsed-header .header h1 .title_deemphasized {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
-  /* line 16, ../sass/modules/_header.scss */
+  /* line 33, ../sass/modules/_header.scss */
   .header h1 {
     text-align: center;
   }
 }
 
-/* line 22, ../sass/modules/_header.scss */
+/* line 39, ../sass/modules/_header.scss */
 .icon {
   padding: 30px;
   background: rgba(43, 45, 33, 0.05);
@@ -957,7 +978,7 @@ h2 {
   top: 50%;
   margin-top: -65px;
 }
-/* line 30, ../sass/modules/_header.scss */
+/* line 47, ../sass/modules/_header.scss */
 .icon:after {
   content: "";
   position: absolute;
@@ -968,7 +989,7 @@ h2 {
   height: 200px;
   display: block;
 }
-/* line 41, ../sass/modules/_header.scss */
+/* line 58, ../sass/modules/_header.scss */
 .icon a {
   width: 70px;
   height: 70px;
@@ -977,80 +998,80 @@ h2 {
   background: transparent url("../images/pete-lada-icon.png") center center no-repeat;
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-  /* line 41, ../sass/modules/_header.scss */
+  /* line 58, ../sass/modules/_header.scss */
   .icon a {
     /* on retina, use image that's scaled by 2 */
     background-image: url("../images/pete-lada-icon@2x.png");
     background-size: 70px 70px;
   }
 }
-/* line 50, ../sass/modules/_header.scss */
+/* line 67, ../sass/modules/_header.scss */
 .collapsed-header .icon {
   margin-top: -22.5px;
   padding: 0;
   left: 85px;
   background: transparent;
 }
-/* line 57, ../sass/modules/_header.scss */
+/* line 74, ../sass/modules/_header.scss */
 .collapsed-header .icon:after {
   display: none;
 }
-/* line 61, ../sass/modules/_header.scss */
+/* line 78, ../sass/modules/_header.scss */
 .collapsed-header .icon a {
   height: 45px;
   width: 45px;
   background-size: 45px 45px;
 }
 @media only screen and (max-width: 600px) {
-  /* line 22, ../sass/modules/_header.scss */
+  /* line 39, ../sass/modules/_header.scss */
   .icon {
     top: 0;
     left: 50%;
     margin-top: 0;
     margin-left: -65px;
   }
-  /* line 74, ../sass/modules/_header.scss */
+  /* line 91, ../sass/modules/_header.scss */
   .icon:after {
     display: none;
   }
 }
 
-/* line 82, ../sass/modules/_header.scss */
+/* line 99, ../sass/modules/_header.scss */
 .site-nav ul, .social ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 87, ../sass/modules/_header.scss */
+/* line 104, ../sass/modules/_header.scss */
 .site-nav ul li, .social ul li {
   display: inline-block;
   padding-left: 40px;
 }
-/* line 91, ../sass/modules/_header.scss */
+/* line 108, ../sass/modules/_header.scss */
 .site-nav ul li a, .social ul li a {
   display: inline-block;
 }
-/* line 94, ../sass/modules/_header.scss */
+/* line 111, ../sass/modules/_header.scss */
 .site-nav ul li a.selected, .social ul li a.selected {
   font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
-  /* line 80, ../sass/modules/_header.scss */
+  /* line 97, ../sass/modules/_header.scss */
   .site-nav, .social {
     display: none;
   }
 }
 
-/* line 105, ../sass/modules/_header.scss */
+/* line 122, ../sass/modules/_header.scss */
 .social {
   float: left;
 }
-/* line 111, ../sass/modules/_header.scss */
+/* line 128, ../sass/modules/_header.scss */
 .social ul li {
   padding-left: 0;
   padding-right: 40px;
 }
-/* line 115, ../sass/modules/_header.scss */
+/* line 132, ../sass/modules/_header.scss */
 .social ul li .fa {
   font-size: 1.25em;
   line-height: 1.2em;
@@ -1058,24 +1079,24 @@ h2 {
   top: 2px;
 }
 @media only screen and (max-width: 600px) {
-  /* line 105, ../sass/modules/_header.scss */
+  /* line 122, ../sass/modules/_header.scss */
   .social {
     display: block;
     float: none;
     margin-right: 0;
   }
-  /* line 128, ../sass/modules/_header.scss */
+  /* line 145, ../sass/modules/_header.scss */
   .social ul {
     text-align: center;
     display: block;
     float: none;
     margin-right: 0;
   }
-  /* line 136, ../sass/modules/_header.scss */
+  /* line 153, ../sass/modules/_header.scss */
   .social ul li:first-child {
     padding-right: 10px;
   }
-  /* line 140, ../sass/modules/_header.scss */
+  /* line 157, ../sass/modules/_header.scss */
   .social ul li:last-child {
     padding-right: 0;
     padding-left: 10px;

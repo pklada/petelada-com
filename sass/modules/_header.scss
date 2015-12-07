@@ -6,9 +6,26 @@
 		color: $black;
 		margin-bottom: rhythm(.4, 38px);
 
+		.title_coffee {
+			display: none;
+		}
+
+		.title_deemphasized {
+			opacity: .8;
+		}
+
 		.collapsed-header & {
 			@include adjust-font-size-to(20px);
 			margin-bottom: 0;
+
+			.title_coffee {
+				display: inline;
+				margin-left: 5px;
+			}
+
+			.title_deemphasized {
+				display: none;
+			}
 		}
 	}
 
