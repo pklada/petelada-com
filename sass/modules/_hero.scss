@@ -1,17 +1,18 @@
 .hero{
-	background:$black url('../images/hero.png') center center no-repeat;
 	position: relative;
 	z-index: 1;
-	padding-top:220px;
 	background-size:cover;
+
 	.content{
 		padding-left:130px + $base-padding;
 	}
+
 	h2{
 		color:white;
 		text-shadow:0 2px 4px rgba(0,0,0,.5);
 		margin:0;
 		padding:$base-margin-vertical 0;
+
 		&:before{
 			content: "";
 			position: absolute;
@@ -23,6 +24,7 @@
 			background: rgba(0,0,0,.15);
 		}
 	}
+
 	&:before{
 		content: "";
 		position: absolute;
@@ -35,14 +37,20 @@
 	}
 
 	@include respond-to(handhelds) {
-		padding-top: 340px;
 		.content{
 			padding:0 ($base-mobile-padding);
 		}
+
 		h2{
+
 			&:before{
 				display: none;
 			}
 		}
 	}
+}
+
+.splash {
+	background:$black url('../images/hero.png') center center no-repeat;
+	background-size: cover;
 }
