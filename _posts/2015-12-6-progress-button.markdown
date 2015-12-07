@@ -2,7 +2,7 @@
 layout: post
 title:  "App Store Style Progress Button"
 date:   2015-12-6
-img: "/images/logo-web-image.png"
+img: "/images/plada-loading-button.gif"
 custom-button-url: "https://dribbble.com/shots/2388579-Progress-button-obj-c-gif"
 custom-button-title: "View on Dribbble"
 tags: ['obj-c', 'guidebook', 'button', 'gif']
@@ -12,7 +12,7 @@ I was recently inspired by Apple's progress buttons in the app store, so I decid
 
 <div class="img img-has-border">
     <div class="img_image">
-        <img src="https://d13yacurqjgara.cloudfront.net/users/108740/screenshots/2388579/loading-button.gif" />
+        <img src="/images/plada-loading-button.gif" />
     </div>
     <p class="img_caption">Guidebook's new app store style progress button.</p>
 </div>
