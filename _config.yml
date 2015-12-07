@@ -2,7 +2,7 @@ name: Pete Lada
 markdown: kramdown
 redcarpet:
   extensions: []
-highlighter: true
+highlighter: pygments
 baseurl: ''
 domain: petelada.com
 excerpt_separator: <!--end-->
