@@ -28,6 +28,16 @@ title: Pete Lada
 	</div>
 	<div class="post-actions">
 		{% if post.has_excerpt %}<a href="{{site.baseurl}}{{post.url}}#post" class="button">Continue Reading</a>{% endif %}
+
+		{% for button in post.custom_buttons %}
+			<a href="{{button.url}}" class="button {{button.class}}">
+				{% if button.fa %}
+					<i class="fa fa-{{button.fa}}"></i>
+				{% endif %}
+				{{button.title}}
+			</a>
+		{% endfor %}
+
 		{% if post.custom-button-url %}
 		<a href="{{post.custom-button-url}}" class="button {{post.custom-button-class}}"><i class="fa fa-cloud-download"></i> {{post.custom-button-title}}</a>
 		{% endif %}
