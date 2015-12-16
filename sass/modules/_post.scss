@@ -26,6 +26,10 @@
 	@include respond-to(handhelds) {
 		margin-left:5px;
 		margin-right:5px;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -109,6 +113,14 @@
 				color:$black;
 			}
 		}
+	}
+
+	hr {
+		margin-top: rhythm(1);
+		margin-bottom: rhythm(1);
+		height: 1px;
+		border: none;
+		background-color: $faint-gray;
 	}
 
 	h3{

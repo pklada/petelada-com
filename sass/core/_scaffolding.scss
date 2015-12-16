@@ -90,4 +90,10 @@
 			}
 		}
 	}
+
+	@include respond-to(handhelds) {
+		margin-top: -1 * $base-mobile-padding;
+		position: relative;
+		z-index: 1;
+	}
 }

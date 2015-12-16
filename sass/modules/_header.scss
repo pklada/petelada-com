@@ -149,14 +149,10 @@
 			margin-right:0;
 
 			li{
+				padding-right: 20px;
 
-				&:first-child{
-					padding-right:10px;
-				}
-
-				&:last-child{
-					padding-right:0;
-					padding-left:10px;
+				&:last-child {
+					padding-right: 0;
 				}
 			}
 		}

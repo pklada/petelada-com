@@ -47,6 +47,7 @@
 	@include respond-to(handhelds) {
 		.content{
 			padding:0 ($base-mobile-padding);
+			padding-bottom: $base-mobile-padding;
 		}
 
 		h2{
