@@ -60,8 +60,8 @@
 		height:70px;
 		display: block;
 		text-indent: -9999em;
-		background:transparent url('../images/pete-lada-icon.png') center center no-repeat;
-		@include image-2x("../images/pete-lada-icon@2x.png", 70px, 70px);
+		background:transparent url('/images/pete-lada-icon.png') center center no-repeat;
+		@include image-2x("/images/pete-lada-icon@2x.png", 70px, 70px);
 	}
 
 	.collapsed-header & {

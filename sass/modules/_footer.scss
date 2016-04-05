@@ -1,6 +1,6 @@
 .footer{
 
-	background:$black url('../images/hero.png') center center no-repeat;
+	background:$black url('/images/hero.png') center center no-repeat;
 	margin-top:rhythm(2);
 	@include box-shadow(inset 0 2px 4px rgba(0,0,0,.45));
 	position: relative;
