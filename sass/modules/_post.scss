@@ -64,9 +64,9 @@
 		float: left;
 		width:52px;
 		height:42px;
-		background: transparent url(../images/post-icon-text.png) left no-repeat;
+		background: transparent url("/images/post-icon-text.png") left no-repeat;
 		margin-bottom:$base-margin-vertical;
-		@include image-2x("../images/post-icon-text@2x.png", 52px, 42px);
+		@include image-2x("/images/post-icon-text@2x.png", 52px, 42px);
 
 		@include respond-to(handhelds) {
 			width:26px;
