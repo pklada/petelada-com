@@ -1,5 +1,5 @@
 
-.post-container{
+.post-container {
 	background: white;
 	border-radius: $base-border-radius;
 	@include box-shadow(0 2px 4px rgba(0,0,0,.04));
@@ -7,6 +7,10 @@
 	position: relative;
 	margin-top:$large-margin-vertical;
 	margin-bottom:rhythm(1);
+	@include transition(transform ease 250ms, opacity ease 250ms);
+	@include transform(translateZ(0) translateY(20px));
+	@include transition-delay(150ms);
+	opacity: 0;
 
 	&:after{
 		content: "";
@@ -30,6 +34,11 @@
 		&:first-child {
 			margin-top: 0;
 		}
+	}
+
+	&.is-ready {
+		@include transform(translateZ(0) translateY(0px));
+		opacity: 1;
 	}
 }
 

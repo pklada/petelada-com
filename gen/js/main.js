@@ -169,7 +169,8 @@ $(function() {
   if ($('.splash').length > 0) {
     return $('.splash').waitForImages({
       finished: function() {
-        return $('.splash').addClass('is-loaded');
+        $('.splash').addClass('is-loaded');
+        return $('.post-container').addClass('is-ready');
       },
       each: function() {},
       waitForAll: true
