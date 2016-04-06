@@ -165,4 +165,16 @@ $(document).ready(function(){
 
 });
 
+$(function() {
+  if ($('.splash').length > 0) {
+    return $('.splash').waitForImages({
+      finished: function() {
+        return $('.splash').addClass('is-loaded');
+      },
+      each: function() {},
+      waitForAll: true
+    });
+  }
+});
+
 },{}]},{},[1])
