@@ -5,6 +5,7 @@ $ ->
       finished: ->
         $('.splash').addClass('is-loaded')
         $('.post-container').addClass('is-ready')
+        $('.post-spinner').addClass('is-hidden')
       each: ->
       waitForAll: true
     )

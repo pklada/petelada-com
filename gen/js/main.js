@@ -170,7 +170,8 @@ $(function() {
     return $('.splash').waitForImages({
       finished: function() {
         $('.splash').addClass('is-loaded');
-        return $('.post-container').addClass('is-ready');
+        $('.post-container').addClass('is-ready');
+        return $('.post-spinner').addClass('is-hidden');
       },
       each: function() {},
       waitForAll: true
