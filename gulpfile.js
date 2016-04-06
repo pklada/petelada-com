@@ -48,10 +48,17 @@ gulp.task('styles', function() {
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
+// font awesome
+gulp.task('fonts', function(){
+  return gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('gen/fonts'));
+});
+
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src([
-    'js/*.js'
+    'js/*.js',
+    'coffee/*.coffee'
   ])
     .pipe(gulpif(/[.]coffee$/, coffee({bare: true}).on('error', swallowError)))
     .pipe(concat('main.js'))
@@ -64,7 +71,8 @@ gulp.task('scripts', function() {
 // Vendor scripts
 gulp.task('vendor-scripts', function() {
   return gulp.src([
-    'js/vendor/*.js'
+    'js/vendor/*.js',
+    'bower_components/waitForImages/dist/jquery.waitforimages.min.js'
   ])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
@@ -95,12 +103,12 @@ gulp.task('watch', function() {
 
   // Watch .scss, .js, image files
   gulp.watch('./sass/**/*.scss', ['styles']);
-  gulp.watch(['js/*.js'], ['scripts']);
+  gulp.watch(['js/*.js', 'coffee/*.coffee'], ['scripts']);
   gulp.watch(['js/vendor/*.js'], ['vendor-scripts']);
 });
 
 gulp.task('default', gulpSequence(
   ['clean', 'clear'],
-  ['styles', 'scripts', 'vendor-scripts'],
+  ['styles', 'scripts', 'vendor-scripts', 'fonts'],
   ['jekyll', 'watch']
 ));

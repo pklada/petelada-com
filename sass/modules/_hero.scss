@@ -60,8 +60,26 @@
 }
 
 .splash {
+	background: $black;
+	position: relative;
+}
+
+.splash_bgd {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
 	background:$black url('/images/hero.png') center center no-repeat;
 	background-size: cover;
+	opacity: 0;
+	@include transition(all ease 250ms);
+	@include transform(scale(.95) translateZ(0));
+
+	.is-loaded & {
+		opacity: 1;
+		@include transform(scale(1) translateZ(0));
+	}
 }
 
 .collapsed-header {
