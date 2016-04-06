@@ -42,6 +42,21 @@
 	}
 }
 
+.post-spinner {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -17px;
+	@include transition(opacity ease 250ms);
+	opacity: 1;
+	
+	&.is-hidden {
+		opacity: 0;
+	}
+}
+
 .meta{
 	position: absolute;
 	top:10px;
