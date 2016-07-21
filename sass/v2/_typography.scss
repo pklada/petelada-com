@@ -1,0 +1,85 @@
+$whitney: 'Whitney SSm A', 'Whitney SSm B', WhitnBoo, ProximaNova-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gotham: 'Gotham SSm A', 'Gotham SSm B', Gotham, sans-serif;
+
+*{
+	font-family: $whitney;
+	-webkit-font-smoothing: antialiased;
+}
+
+$type-settings: (
+  -1: (
+    font-size: rem(12),
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: rem(14),
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: rem(18),
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: rem(24),
+    line-height: $base-line-height * 2
+  ),
+	3: (
+    font-size: rem(30),
+    line-height: $base-line-height * 2
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'line-height');
+}
+
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+p {
+	@include type-setting(0);
+  margin: 0 0 $base-line-height 0;
+  color: $color-text;
+
+  &.large {
+    @include type-setting(1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+	@include type-setting(0);
+  margin: 0 0 $base-line-height 0;
+  color: $color-text;
+}
+
+h1 {
+  font-weight: bold;
+  @include type-setting(2);
+  margin: 0 0 $base-line-height 0;
+  color: $color-headline;
+}
+
+h2 {
+  @include type-setting(1);
+  margin: 0 0 $base-line-height 0;
+  color: $color-headline;
+}
+
+h3 {
+  @include type-setting(1);
+  margin: 0 0 $base-line-height 0;
+  color: $color-headline;
+  font-weight: normal;
+}

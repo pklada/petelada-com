@@ -16,10 +16,10 @@ Guidebook's logo was originally created from a slightly modified version of Rock
 Below is a quick .gif showing a comparison to the old logo, as well as some of the guides we created. I'll post in more detail about the process at a later time.
 
 <div class="img">
-    <div class="img_image">
+    <div class="img__image">
         <img src="/images/guidebook-logo-redraw.gif" />
     </div>
-    <p class="img_caption">My redraw of the Guidebook logo.</p>
+    <p class="img__caption">My redraw of the Guidebook logo.</p>
 </div>
 
 Let me know what you think on [Twitter](http://twitter.com/pklada)!

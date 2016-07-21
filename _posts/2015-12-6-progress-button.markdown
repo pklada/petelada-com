@@ -23,10 +23,10 @@ We had a lot of positive response from this component, so we decided to open sou
 I was recently inspired by Apple's progress buttons in the app store, so I decided to create my own to use within Guidebook. This is a screen recording of the actual button running in the app (not a prototype).
 
 <div class="img img-has-border">
-    <div class="img_image">
+    <div class="img__image">
         <img src="/images/plada-loading-button.gif" />
     </div>
-    <p class="img_caption">Guidebook's new app store style progress button.</p>
+    <label class="img__caption">Guidebook's new app store style progress button.</label>
 </div>
 
 Let me know what you think on [Twitter](http://twitter.com/pklada)!

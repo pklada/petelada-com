@@ -21,44 +21,49 @@ layout: default
   </div>
 </div>
 
-<div class="post-container" data-post-id="{{page.id}}">
+<main class="is-solo">
 
-	<a class="post_kudos no-kudos" href>
-		<span class="post_kudos_label"><span class="fa fa-heart mr5"></span> <span class="post_kudos_label_text">{% if page.like_text %}{{ page.like_text}}{% else %}Nice!{% endif %}</span></span>
-		<span class="post_kudos_count">0</span>
-	</a>
+	<div class="post" data-post-id="{{page.id}}">
 
-	<div class="meta">
-		<div class="post-icon"></div>
-		<p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
-	</div>
-	<div class="post">
-		<a name="post"></a>
-		<h2>{{ page.title }}</h2>
-		{% if page.tags %}
-		<div class="tags">
-			{% for tag in page.tags %}
-			<div class="tags_tag">#{{ tag }}</div>
-			{% endfor %}
+		<a class="post__kudos no-kudos" href>
+			<span class="post__kudos__label"><span class="fa fa-heart mr5"></span> <span class="post_kudos_label_text">{% if page.like_text %}{{ page.like_text}}{% else %}Nice!{% endif %}</span></span>
+			<span class="post__kudos__count">0</span>
+		</a>
+
+		<div class="post__meta">
+			<div class="post-icon"></div>
+			<p class="post__date">{{ page.date | date: '%B %d, %Y' }}</p>
 		</div>
-		{% endif %}
-		{{ content }}
-	</div>
-	<div class="post-actions">
-		{% if page.custom-button-url %}
-		<a href="{{page.custom-button-url}}" class="button {{page.custom-button-class}}">{{page.custom-button-title}}</a>
-		{% endif %}
+		<div class="post__content">
+			<a name="post"></a>
+			<h2 class="post__title">{{ page.title }}</h2>
+			{% if page.tags %}
+			<div class="tags post__tags">
+				{% for tag in page.tags %}
+				<div class="tags__tag">#{{ tag }}</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+			<div class="bgd-underlines">
+				{{ content }}
+			</div>
+		</div>
+		<div class="post__actions">
+			{% if page.custom-button-url %}
+			<a href="{{page.custom-button-url}}" class="button {{page.custom-button-class}}">{{page.custom-button-title}}</a>
+			{% endif %}
 
-		{% for button in page.custom_buttons %}
-			<a href="{{button.url}}" class="button {{button.class}}">
-				{% if button.fa %}
-					<i class="fa fa-{{button.fa}}"></i>
-				{% endif %}
-				{{button.title}}
-			</a>
-		{% endfor %}
+			{% for button in page.custom_buttons %}
+				<a href="{{button.url}}" class="button button--primary {{button.class}}">
+					{% if button.fa %}
+						<i class="fa fa-{{button.fa}}"></i>
+					{% endif %}
+					{{button.title}}
+				</a>
+			{% endfor %}
 
-		<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
-	</div>
+			<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button--secondary"><i class="fa fa-twitter"></i> Share on Twitter</a>
+		</div>
 
-</div> <!-- / .post-container -->
+	</div> <!-- / .post-container -->
+</main>

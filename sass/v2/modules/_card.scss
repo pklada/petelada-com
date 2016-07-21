@@ -1,0 +1,72 @@
+
+$card-bgd: $color-bgd;
+
+.card {
+  background: $card-bgd;
+  border: 1px solid $color-border;
+  border-radius: $base-corner-radius;
+  box-shadow: 0 2px 6px rgba(0,0,0,.09);
+
+  padding: $base-v-padding $base-h-padding;
+}
+
+.card__title {
+  margin-top: 0;
+}
+
+.card__content {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  height: 100%;
+}
+
+.card__description {
+  max-height: $base-line-height * 5;
+  overflow: hidden;
+
+  .img, .media {
+    display: none;
+  }
+}
+
+.card__item {
+  @include flex(1);
+  margin-bottom: $base-line-height;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card__main {
+  position: relative;
+  
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: $base-line-height;
+    content: "";
+    pointer-events: none;
+    @include linear-gradient(to top, $card-bgd, transparentize($card-bgd, 1), $fallback: transparent);
+  }
+}
+
+.card__footer {
+  @include flex(initial);
+  margin-left: -1 * $base-h-padding;
+  margin-right: -1 * $base-h-padding;
+  margin-bottom: -1 * $base-v-padding !important;
+  padding: $base-v-padding $base-h-padding;
+  border-top: 1px solid transparentize($color-border, .5);
+  border-radius: 0 0 $base-corner-radius $base-corner-radius;
+  background: darken($card-bgd, 3%);
+}
+
+
+.card--full-height {
+  height: 100%;
+}

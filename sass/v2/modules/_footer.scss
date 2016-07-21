@@ -1,0 +1,12 @@
+.footer {
+
+  background: $black;
+  @include pad($base-line-height default);
+
+  text-align: center;
+
+  p {
+    color: $color-text-over-dark;
+  }
+
+}

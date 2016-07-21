@@ -1,0 +1,21 @@
+.flex-row {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include flex-wrap(wrap);
+  margin-right: -1 * $gutter;
+  margin-top: -1 * $base-v-padding * 2;
+}
+
+.flex-row__item {
+  @include flex(1);
+  padding-right: $gutter;
+  padding-top: $base-v-padding * 2;
+}
+
+.flex-row--half {
+  .flex-row__item {
+    @include flex-basis(50%);
+  }
+}

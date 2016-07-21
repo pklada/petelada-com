@@ -1,0 +1,87 @@
+
+.post {
+}
+
+.post__title {
+  @include type-setting(3);
+  margin: 0 0 $base-line-height*3 0;
+  color: $color-headline;
+}
+
+.post__tags {
+  display: none;
+}
+
+.post__date {
+  font-family: $gotham;
+  @include type-setting(-1);
+  text-transform: uppercase;
+  color: $color-subtext;
+}
+
+.post__meta {
+  margin-bottom: $base-line-height;
+}
+
+.post__content {
+
+  margin-bottom: $base-line-height * 2;
+
+  p {
+  	@include type-setting(1);
+  }
+
+  hr {
+    height: 1px;
+    border: none;
+    background: $color-border;
+    margin: $base-v-margin*2 0;
+  }
+}
+
+.post__kudos {
+  float: right;
+  background: $color-bgd;
+  border: 1px solid $color-border;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0,0,0,.06);
+  font-size: 0;
+  height: $base-line-height * 2;
+  line-height: $base-line-height * 2;
+
+  &.kudos-given {
+    border-color: $base !important;
+    background: $base;
+  }
+
+  &:hover {
+    border-color: $base;
+  }
+}
+
+.post__kudos__label {
+  color: $color-text;
+  display: inline-block;
+  vertical-align: middle;
+  border-right: 1px solid $color-border;
+  @include type-setting(0);
+  padding: 0 10px;
+
+  .kudos-given & {
+    border-color: darken($base, 5%);
+    color: $color-text-over-dark;
+  }
+}
+
+.post__kudos__count {
+  color: $color-text;
+  display: inline-block;
+  @include type-setting(0);
+  padding: 0 10px;
+  vertical-align: middle;
+
+  .kudos-given & {
+    color: $color-text-over-dark;
+  }
+}

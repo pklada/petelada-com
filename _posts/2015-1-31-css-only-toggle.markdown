@@ -14,10 +14,10 @@ has_excerpt: true
 [I recently posted a shot on Dribbble](https://dribbble.com/shots/1908149-CSS-only-toggle-no-js) demoing a component I worked on for a web project we're working on internally at Guidebook. The component is a simple binary toggle, but with a caveat: it was constructed using only CSS (and HTML of course). I had some requests to show how it was done, so I'll detail how to create your own CSS-only toggle here.
 
 <div class="img img-has-border">
-    <div class="img_image">
+    <div class="img__image">
         <img src="/images/toggle/toggle.gif" />
     </div>
-    <p class="img_caption">"Binary Toggle" for a web project at Guidebook. Created using only CSS and some markup.</p>
+    <p class="img__caption">"Binary Toggle" for a web project at Guidebook. Created using only CSS and some markup.</p>
 </div>
 
 The Markup

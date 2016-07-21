@@ -15,10 +15,10 @@ The iPhone 6 is a nearly perfect phone. The design is beautiful. The build quali
 I think I have fairly normal sized male hands. However, it is nearly impossible for me to reach the "back" button in iOS while holding the phone one-handed. I can't even imagine how this would feel on the 6 Plus. Granted, Apple provided a way to access the navigation bar items by adding a "reachability mode", but this just smacks of a half-assed solution to a problem which should not have existed to begin with. Frankly, I never use the reachability mode anyway as it would then take three button tabs to execute a single action (double tap home to get into the mode, then hit back). This is perhaps an area where Androids native "back" button works in their favor &mdash; its right there by the thumb; no special mode required. 
 
 <div class="img">
-    <div class="img_image">
+    <div class="img__image">
         <img src="/images/img_iphone6_reachability.png" />
     </div>
-    <p class="img_caption">"Reachability mode" on the iPhone 6</p>
+    <p class="img__caption">"Reachability mode" on the iPhone 6</p>
 </div>
 
 I am a fairly frequent runner, as well as a gym-goer. I previously would bring my iPhone 5 with me daily on runs or gym sessions &mdash; the phone fit fairly comfortably into my gym shorts. Now, though, the 6 protrudes with odd angles from my pockets, becoming a fairly large nuisance while I exercise. Not great.  

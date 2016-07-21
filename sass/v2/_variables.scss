@@ -1,0 +1,49 @@
+// variables
+
+
+// colors
+
+$base: #629D41;
+$white: #fff;
+$black: #414B3B;
+$dark-gray: #51574E;
+$light-gray: #D8D8D8;
+$med-gray: #AEBBA7;
+
+// colors by function
+$color-faint-bgd: lighten($light-gray, 10%);
+$color-border: $light-gray;
+$color-text: $dark-gray;
+$color-subtext: lighten($dark-gray, 20%);
+$color-headline: $black;
+$color-link: $base;
+$color-bgd: $white;
+$color-button-primary-bgd: $base;
+$color-button-primary-text: $white;
+$color-text-over-dark: $white;
+$color-link-over-dark: $white;
+
+// base font size
+$em-base: 16px;
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+// base margins and padding
+$base-v-padding: $base-line-height;
+$base-v-margin: $base-line-height;
+$base-h-margin: 20px;
+$base-h-padding: 20px;
+
+// base settings
+$base-corner-radius: 6px;
+
+// animations
+$anim-linear: linear;
+$anim-ease: ease-in-out;
+$anim-slight-bounce: cubic-bezier(0.34,1.61,0.7,1);
+
+// grid
+$column: 77px;
+$gutter: $base-h-margin * 2;
+$grid-columns: 12;
+$max-width: 1400px;

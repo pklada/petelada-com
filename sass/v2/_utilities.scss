@@ -1,0 +1,35 @@
+
+// utility classes
+
+.v-align-middle {
+  vertical-align: middle;
+}
+
+
+// layout utility classes
+
+.l-v-spaced {
+  margin-top: $base-v-margin;
+  margin-bottom: $base-v-margin;
+}
+
+.l-h-spaced {
+  margin-left: $base-h-margin;
+  margin-right: $base-h-margin;
+}
+
+.l-h-right-spaced {
+  margin-right: $base-h-margin;
+}
+
+.l-h-left-spaced {
+  margin-left: $base-h-margin;
+}
+
+.l-h-left-half-spaced {
+  margin-left: $base-h-margin / 2;
+}
+
+.l-h-left-right-spaced {
+  margin-right: $base-h-margin / 2;
+}

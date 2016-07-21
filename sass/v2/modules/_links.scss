@@ -1,0 +1,43 @@
+
+a {
+	color: $color-link;
+	text-decoration: none;
+	@include transition-property(color, border, background);
+  @include transition-duration(100ms);
+  @include transition-timing-function(ease);
+
+  -webkit-tap-highlight-color: rgba(0,0,0,.44);
+
+	border-bottom: 1px solid lighten($color-link, 40%);
+
+	&:hover{
+		color: darken($color-link, 10%);
+		border-color: lighten($color-link, 30%);
+	}
+
+	&.light {
+		color: $color-link-over-dark;
+
+		border-bottom-color: transparentize($color-link-over-dark, .7);
+	}
+}
+
+
+.bgd-underlines {
+  a {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($color-link, 40%) 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 97%;
+    border-bottom: none;
+    text-shadow:
+      -1px -1px 0 $color-bgd,
+      1px -1px 0 $color-bgd,
+      -1px 1px 0 $color-bgd,
+      1px 1px 0 $color-bgd; 
+
+    &:hover {
+      background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($color-link, 30%) 50%);
+    }
+  }
+}

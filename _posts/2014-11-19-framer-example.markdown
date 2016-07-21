@@ -15,10 +15,10 @@ I have been using [Framer](http://framerjs.com) for prototyping for a while now,
 I wanted to share some of my work with the community, so I put together an interaction prototype the other day based off some experimental views we are working on at [Guidebook](http://guidebook.com). The prototype is honestly a little too complex for an actual prototype &mdash; the idea behind them is that you should be able to quickly pump them out and iterate on your existing designs, not spend huge amounts of time refining. But in any case, its fun to work on a more complete view prototype, so here you are. 
 
 <div class="img img-has-border">
-    <div class="img_image">
+    <div class="img__image">
         <img src="/images/guidebook-search.gif" />
     </div>
-    <p class="img_caption">"Guide search" interaction prototype for Guidebook, created with Framer.</p>
+    <p class="img__caption">"Guide search" interaction prototype for Guidebook, created with Framer.</p>
 </div>
 
 The prototype consists of five primary interactions: searching, redeeming a code, scanning a code, pulling to refresh, and scrolling the view. The view, to give some context, is an experimental way to display your guides within Guidebook.

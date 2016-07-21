@@ -7,7 +7,7 @@ var k = firebase.child('kudos');
 
 Kudos = function($el){
 
-  this.postID = $el.parents('.post-container').data('post-id');
+  this.postID = $el.parents('.post').data('post-id');
   this.$el = $el;
   this.initKudos();
   this.fetchKudos();
@@ -55,7 +55,7 @@ Kudos.prototype = {
     }
     $kudos = that.$el;
     $kudos.removeClass('no-kudos');
-    $count = $kudos.find('.post_kudos_count');
+    $count = $kudos.find('.post__kudos__count');
     $count.html(count);
   },
 
@@ -117,9 +117,9 @@ function isMobile() {
 
 $(document).ready(function(){
 
-  if( $('.post_kudos').length > 0){
+  if( $('.post__kudos').length > 0){
 
-    $('.post_kudos').each(function(){
+    $('.post__kudos').each(function(){
       var kudos = new Kudos($(this));
     });
 

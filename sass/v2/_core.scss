@@ -1,0 +1,53 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+
+html, body {
+	background: $color-bgd;
+	overflow-x: hidden;
+	font-size: $em-base;
+
+	&.debug {
+		background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($color-link, 40%) 50%);
+		background-repeat: repeat;
+		background-size: 100% $base-line-height * 2;
+	}
+}
+
+// main scaffolding
+
+.container {
+	width: 100%;
+}
+
+.main-content {
+	@include outer-container;
+
+	main {
+		@include span-columns(8);
+		@include omega();
+		@include pad($base-line-height*2 default);
+
+		&.is-solo {
+			@include shift(2);
+		}
+	}
+
+	aside {
+		@include span-columns(4);
+		@include pad($base-line-height*2 0 $base-line-height*2 default);
+	}
+}
+
+.photo-box {
+	height: $base-line-height * 20;
+	margin-top: -1 * $base-line-height * 5;
+	margin-bottom: $base-line-height * 2;
+	border-radius: $base-corner-radius;
+	background: $black;
+	box-shadow: 0 0 0 5px $color-bgd;
+	background-size: cover;
+}

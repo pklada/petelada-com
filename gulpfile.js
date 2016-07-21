@@ -16,7 +16,9 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     gulpif = require('gulp-if'),
     browserify = require('gulp-browserify'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    sass = require('gulp-sass');
+    sourcemaps = require('gulp-sourcemaps');
 
 
 //   TASKS
@@ -34,17 +36,15 @@ gulp.task('clear', function (done) {
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src('sass/app.scss')
-    .pipe(compass({
-      config_file: './compass-config.rb',
-      bundle_exec: 'true',
-      css: 'gen/css/',
-      sass: 'sass/',
-      sourcemap: 'inline',
-      image: 'img/',
-      comments: false
+  return gulp.src('sass/v2/app.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true
     }))
     .on('error', swallowError)
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./gen/css'))
+    .pipe(gulp.dest('./_site/gen/css'))
     .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -102,7 +102,7 @@ gulp.task('clean', function() {
 gulp.task('watch', function() {
 
   // Watch .scss, .js, image files
-  gulp.watch('./sass/**/*.scss', ['styles']);
+  gulp.watch('./sass/**/*.{scss,sass}', ['styles']);
   gulp.watch(['js/*.js', 'coffee/*.coffee'], ['scripts']);
   gulp.watch(['js/vendor/*.js'], ['vendor-scripts']);
 });

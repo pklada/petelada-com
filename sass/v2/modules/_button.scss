@@ -1,0 +1,59 @@
+
+$button-height: $base-line-height * 2;
+
+.button {
+  display: inline-block;
+  height: $button-height;
+  line-height: $button-height;
+  padding: 0 $base-h-padding;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  min-width: 175px;
+  text-align: center;
+
+  font-size: rem(14);
+
+  @include transition(all ease 200ms);
+}
+
+.button--primary {
+  background: $color-button-primary-bgd;
+  color: $color-button-primary-text;
+  border-color: $color-button-primary-bgd;
+
+  &:hover {
+    background: darken($color-button-primary-bgd, 5%);
+    color: $color-button-primary-text;
+    border-color: darken($color-button-primary-bgd, 5%);
+  }
+
+  &:active {
+    background: darken($color-button-primary-bgd, 10%);
+    color: $color-button-primary-text;
+    border-color: darken($color-button-primary-bgd, 10%);
+  }
+}
+
+.button--secondary {
+  // basically the inverse of the primary button
+  background: $color-button-primary-text;
+  border-color: $color-button-primary-bgd;
+  color: $color-button-primary-bgd;
+
+  &:hover {
+    background: darken($color-button-primary-text, 2%);
+    color: darken($color-button-primary-bgd, 5%);
+    border-color: darken($color-button-primary-bgd, 5%);
+  }
+
+  &:active {
+    background: darken($color-button-primary-text, 5%);
+    color: darken($color-button-primary-bgd, 10%);
+    border-color: darken($color-button-primary-bgd, 10%);
+  }
+}
+
+.button--full-width {
+  width: 100%;
+  display: block;
+}

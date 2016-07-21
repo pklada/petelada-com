@@ -14,11 +14,11 @@ We recently released a major update to Guidebook, which included [the new activi
 
 We wanted to display the feed on our site, but didn't want simply a static image as that wouldn't show off enough of what the feed offered. We also shied away from a video, mainly due to difficulties in updating it and translating it to other languages. I decided to create a series of animations using pure css and javascript in order to show the feed "in use". I think the result turned out nice:
 
-<div class="media media-feed">
-  <div class="media_iframe">
+<div class="media media--feed">
+  <div class="media__iframe">
     <iframe src="https://guidebook.com/feed/build/feed.html" width="375" height="667" frameBorder="0" scrolling="no"></iframe>
   </div>
-  <div class="media_caption">A representation of Guidebook's new activity feed, using css transitions.</div>
+  <div class="media__caption">A representation of Guidebook's new activity feed, using css transitions.</div>
 </div>
 
 The solution was fairly simple. I created a few views which contained screenshots of various states of the feed. I would then transition between these views using css transitions. The "finger taps" were also simulated using css transitions and some simple javascript. The entire thing is run on a super minimal javascript animation timeline.
