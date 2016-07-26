@@ -1,0 +1,27 @@
+
+{% capture initial_class %}
+  {% if include.class %}
+    {{ include.class }}
+  {% else %}
+    button--secondary
+  {% endif %}
+{% endcapture %}
+
+
+{% if include.type %}
+  {% capture class_type %}
+    button--{{include.type}}
+  {% endcapture %}
+  {% capture button_class %}
+    {{ initial_class | append: class_type }}
+  {% endcapture %}
+{% endif %}
+
+<a class="button button--has-span {{ button_class }}" href="{{ include.href }}" target="{{ include.target | default: '_self'}}">
+
+  {% if include.type %}
+    {% include svg/ic_{{include.type}}.svg class="" %}
+  {% endif %}
+
+  <span>{{ include.title }}</span>
+</a>

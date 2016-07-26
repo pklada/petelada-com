@@ -25,14 +25,18 @@ layout: default
 
 	<div class="post" data-post-id="{{page.id}}">
 
-		<a class="post__kudos no-kudos" href>
-			<span class="post__kudos__label"><span class="fa fa-heart mr5"></span> <span class="post_kudos_label_text">{% if page.like_text %}{{ page.like_text}}{% else %}Nice!{% endif %}</span></span>
+		<a class="post__kudos no-kudos js-boom" href>
+			<span class="post__kudos__label"><span class="fa fa-heart mr5"></span> <span class="post_kudos_label_text">👍</span></span>
 			<span class="post__kudos__count">0</span>
 		</a>
 
 		<div class="post__meta">
-			<div class="post-icon"></div>
-			<p class="post__date">{{ page.date | date: '%B %d, %Y' }}</p>
+			<p class="chiclet chiclet--{{ page.type }} post__chiclet">
+				{{ page.type | uppercase }}
+			</p>
+			<p class="post__date">
+				{{ page.date | date: '%B %d, %Y' }}
+			</p>
 		</div>
 		<div class="post__content">
 			<a name="post"></a>
@@ -48,7 +52,11 @@ layout: default
 				{{ content }}
 			</div>
 		</div>
+		<div class="post__divider">
+			{% include svg/icon-16.svg %}
+		</div>
 		<div class="post__actions">
+
 			{% if page.custom-button-url %}
 			<a href="{{page.custom-button-url}}" class="button {{page.custom-button-class}}">{{page.custom-button-title}}</a>
 			{% endif %}
@@ -62,7 +70,13 @@ layout: default
 				</a>
 			{% endfor %}
 
-			<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button--secondary"><i class="fa fa-twitter"></i> Share on Twitter</a>
+			{% capture share_url %}http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}{% endcapture %}
+			{% include button.html type="twitter" title="Share this" class="button--secondary" href=share_url target="_blank" %}
+
+			<a class="post__kudos no-kudos js-boom" href>
+				<span class="post__kudos__label"><span class="fa fa-heart mr5"></span> <span class="post_kudos_label_text">👍</span></span>
+				<span class="post__kudos__count">0</span>
+			</a>
 		</div>
 
 	</div> <!-- / .post-container -->

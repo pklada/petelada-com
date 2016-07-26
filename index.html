@@ -2,45 +2,69 @@
 layout: default
 title: Pete Lada
 has_aside: true
+selected: about
+show_name: false
 ---
 
 
 <aside>
-  <div class="photo-box">
+  <div class="photo-box" data-target-image="plada_profile">
 
   </div>
   <div class="status">
     <h2>
-      <img src="{{ site.baseurl }}svg/bolt.svg" class="v-align-middle" />
+      {% include svg/bolt.svg class="v-align-middle" %}
       <span class="v-align-middle l-h-left-half-spaced">Status</span>
     </h2>
     <p class="large bgd-underlines">I am currently working as the co-founder, creative director, lead product designer, and sometimes-developer at <a href="http://guidebook.com">Guidebook</a>.</p>
-    <a href="" class="button button--primary button--full-width">Get in touch</a>
+    {% include button.html type="chat" class="button--primary button--full-width" title="Get in touch" %}
   </div>
 </aside>
 <main>
   <div>
-    <h1 class="title bgd-underlines"><span class="title_deemphasized">Hi, I'm </span>Pete Lada <a class="title__twitter l-h-left-half-spaced" href="http://twitter.com/pklada">@pklada</a></h1>
+    <h1 class="title bgd-underlines">
+      <span class="title_deemphasized">Hi, I'm </span>
+      <span class="pipes">Pete Lada</span><span class="pipes">{% include svg/ic_twitter.svg class="title__twitter-icon" %}</span>
+      <span><a class="title__twitter" href="http://twitter.com/pklada">pklada</a></span>
+    </h1>
     <p class="large">I am a designer and front-end developer. I spend my time fussing with pixels in Photoshop Sketch or pretending I know how to use vim. I live in the cheerful Bay Area and love coffee. ☕</p>
   </div>
   <div class="divider"></div>
-  <h2>Recent Things</h2>
+  <h2>
+    {% include svg/ic_things.svg class="v-align-middle" %}
+    <span class="v-align-middle l-h-left-half-spaced">Recent Things</span>
+  </h2>
 
 
   <div class="flex-row flex-row--half">
 
-    {% for post in paginator.posts %}
+    {% for post in site.posts limit:4 %}
     <div class="flex-row__item">
-      <div class="card card--full-height">
+      <div class="card card--full-height {% if post.type == 'dribbble' %}card--has-image{% endif %}">
         <div class="card__content">
           <div class="card__item card__main">
-            <h3 class="card__title">{{ post.title }}</h3>
-            <div class="card__description bgd-underlines">
-              {{ post.excerpt }}
-            </div>
+            <p class="card__chiclet chiclet chiclet--{{ post.type }}">{{ post.type | uppercase }}</p>
+            {% if post.type == 'dribbble' %}
+              <div class="card__image">
+                <img src="{{ post.img }}" />
+              </div>
+            {% else %}
+              <h3 class="card__title">{{ post.title }}</h3>
+              <div class="card__description bgd-underlines">
+                {{ post.excerpt }}
+              </div>
+            {% endif %}
           </div>
           <div class="card__item card__footer">
-            <a href="{{ site.baseurl }}{{ post.url }}" class="button button--secondary button--full-width">Read more</a>
+
+            {% capture post_url %}
+              {% if post.type == 'dribbble' %}
+                {{ post.alt_url }}
+              {% else %}
+                {{ site.baseurl }}{{ post.url }}
+              {% endif %}
+            {% endcapture %}
+            <a href="{{ post_url }}" class="button button--secondary button--full-width">{{ post.read_more_text | default: "Read more"}}</a>
           </div>
         </div>
       </div>

@@ -5,11 +5,13 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import "core";
-
 @import "typography";
 
 @import "utilities";
+
+@import "mixins";
+
+@import "core";
 
 // modules
 @import "modules/links";
@@ -22,3 +24,10 @@
 @import "modules/post";
 @import "modules/media";
 @import "modules/image";
+@import 'modules/chiclet';
+@import 'modules/row';
+@import 'modules/code-block';
+@import 'modules/thumb';
+
+// syntax highlighting
+@import 'syntax';

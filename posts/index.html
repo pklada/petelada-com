@@ -1,0 +1,32 @@
+---
+layout: default
+title: Pete Lada
+selected: posts
+---
+
+<main class="is-solo">
+  <div>
+    {% for post in paginator.posts %}
+    <div class="row">
+      <div class="row__lead">
+        <div>
+          <p class="chiclet chiclet--{{post.type}}">{{ post.type | uppercase }}</p>
+        </div>
+      </div>
+      {% if post.type == 'dribbble' %}
+        <div class="row__image">
+          <div>
+            <img src="{{ post.img }}" />
+          </div>
+        </div>
+      {% endif %}
+      <div class="row__content">
+        <p class="row__title">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </p>
+        <p class="row__subtitle">{{ post.date | date: '%B %d, %Y' }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>

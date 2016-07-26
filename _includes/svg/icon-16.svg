@@ -1,0 +1,1 @@
+<svg width="16" height="16" viewBox="0 0 16 16" class="{{ include.class }}"><path d="M.957 0H16v1H1v15H0V0h.957zm14.086 9H5.572l3.963 3.963-.707.707-4.963-4.963.18-.18-.18-.178L8.713 3.5l.707.707L5.628 8H15V1h1v8h-.957zM1 15h15v1H1v-1z" fill="#A7A7A7" fill-rule="evenodd"/></svg>

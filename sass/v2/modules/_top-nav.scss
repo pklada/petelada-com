@@ -4,18 +4,21 @@
 // variables
 $top-nav-height: $base-line-height * 6;
 $top-nav-link-h-padding: 20px;
+$color-top-nav-bgd: mix($color-bgd, $base, 85%);
+$color-top-nav-ripple: shade($color-top-nav-bgd, 4%);
 
 .top-nav {
   height: $top-nav-height;
   width: 100%;
 
-  background-color: mix($color-bgd, $base, 85%);
+  background-color: $color-top-nav-bgd;
 
   box-shadow: inset 0 -1px rgba(0,0,0,.06);
 }
 
 .top-nav__container {
   @include outer-container();
+  position: relative;
 }
 
 .top-nav__nav {
@@ -29,6 +32,7 @@ $top-nav-link-h-padding: 20px;
   }
 
   ul {
+    float: right;
     margin: 0;
     padding: 0;
     height: $top-nav-height;
@@ -36,23 +40,163 @@ $top-nav-link-h-padding: 20px;
   }
 
   li {
-    display: inline-block;
+    height: $base-line-height * 2;
+    line-height: $base-line-height * 2;
     vertical-align: bottom;
-    line-height: $base-line-height;
-    padding-bottom: rem(25);
+    display: inline-block;
     position: relative;
-    left: -1 * $top-nav-link-h-padding;
+    right: -1 * $top-nav-link-h-padding;
+    margin-bottom: $base-line-height;
   }
 
   a {
     text-decoration: none;
     border: none;
     display: inline-block;
-    padding: 3px $top-nav-link-h-padding;
+    padding: 0px $top-nav-link-h-padding;
     color: $black;
+    font-weight: $base-font-weight-bold;
+    position: relative;
+    overflow: hidden;
+    border-radius: $base-corner-radius/2;
+    @include transform(translateZ(0));
+    @include transition-property(background);
+    @include transition-duration($duration-v-long);
+    @include transition-timing-function(ease);
+    @include transition-delay(0s);
+    background: transparent;
+    outline: none;
 
     &.is-selected {
       color: $base;
     }
+
+    span {
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+    }
+
+    .ripple {
+      position: absolute;
+      width: $base-line-height;
+      height: $base-line-height;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      content: "";
+      background: $color-top-nav-ripple;
+      opacity: 0;
+      border-radius: 50%;
+      @include transition(transform ease-in $duration-long, opacity ease-in $duration-med);
+      @include transform(translateZ(0));
+
+      &.ripple--click {
+        background: darken($color-top-nav-ripple, 5%);
+      }
+    }
+
+    &:hover {
+      .ripple--hover {
+        @include transform(scale(5) translateZ(0));
+        opacity: 1;
+      }
+
+      @include transition-duration($duration-v-long * 2);
+      @include transition-delay(50ms);
+      background: $color-top-nav-ripple;
+    }
+
+    &:active {
+      .ripple--click {
+        @include transform(scale(10) translateZ(0));
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.top-nav__logo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  @include shift(4);
+  @include pad(0 default);
+  @include transition(transform $anim-slight-bounce $duration-med);
+  @include transform(tranlateZ(0) scale(1));
+  margin-bottom: $base-line-height;
+  height: $base-line-height * 2;
+  border: none;
+  line-height: $base-line-height * 2;
+
+  span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .name {
+    margin-left: 10px;
+    color: rgba($black, .5);
+    @include transition(color ease $duration-med);
+    font-weight: $base-font-weight-bold;
+  }
+
+  .name__first,
+  .name__last {
+    @include transition(opacity ease $duration-med, transform ease $duration-long);
+  }
+
+  &.hide-name {
+
+    .name__first {
+      @include transform(translateX(-20px) scale(.5));
+      opacity: 0;
+    }
+
+    .name__last {
+      @include transform(translateX(-20px) scale(.5));
+      opacity: 0;
+    }
+  }
+
+  svg {
+    display: block;
+
+    path {
+      fill: rgba($black, .5);
+      @include transition(fill ease $duration-med);
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: $base;
+      }
+    }
+
+    .name {
+      color: $base;
+    }
+
+    .name__last {
+      @include transition-delay($duration-med);
+    }
+
+    .name__first,
+    .name__last {
+      @include transform(translateX(0) scale(1));
+      @include transition-timing-function($anim-slight-bounce);
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    @include transform(scale(.95) translateZ(0));
+  }
+
+  .no-aside & {
+    @include shift(2);
   }
 }

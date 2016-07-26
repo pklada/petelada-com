@@ -4,7 +4,7 @@
 
 .post__title {
   @include type-setting(3);
-  margin: 0 0 $base-line-height*3 0;
+  margin: 0 7rem $base-line-height*2 0;
   color: $color-headline;
 }
 
@@ -17,10 +17,56 @@
   @include type-setting(-1);
   text-transform: uppercase;
   color: $color-subtext;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.post__chiclet {
+  margin: 0;
+  margin-right: rem(15);
+  position: relative;
+
+  &:after {
+    position: absolute;
+    right: rem(-10);
+    height: 100%;
+    top: 0;
+    width: 1px;
+    background: $color-border;
+    content: "";
+  }
 }
 
 .post__meta {
   margin-bottom: $base-line-height;
+  line-height: $base-line-height * 2;
+}
+
+.post__divider {
+  text-align: center;
+  height: $base-line-height;
+  line-height: $base-line-height;
+  position: relative;
+  margin-bottom: $base-line-height * 2;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background: $color-border;
+    content: "";
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    background: $color-bgd;
+    box-shadow: rem(-10) 0 0 0 $color-bgd, rem(10) 0 0 0 $color-bgd;
+  }
 }
 
 .post__content {
@@ -37,6 +83,13 @@
     background: $color-border;
     margin: $base-v-margin*2 0;
   }
+
+  p > code {
+		font-weight: 500;
+		border: 1px solid $color-faint-bgd;
+		padding: 1px 4px;
+		border-radius: $base-corner-radius / 2;
+	}
 }
 
 .post__kudos {
@@ -49,14 +102,26 @@
   font-size: 0;
   height: $base-line-height * 2;
   line-height: $base-line-height * 2;
+  @include user-select(none);
+  @include transition(all ease $duration-short);
+  @include transform(translateZ(0));
 
   &.kudos-given {
     border-color: $base !important;
     background: $base;
   }
 
+  &.is-loading {
+    opacity: .5;
+  }
+
   &:hover {
     border-color: $base;
+    @include transform(scale(1.05) translateZ(0));
+  }
+
+  &:active {
+    @include transform(scale(.95) translateZ(0));
   }
 }
 
@@ -65,7 +130,8 @@
   display: inline-block;
   vertical-align: middle;
   border-right: 1px solid $color-border;
-  @include type-setting(0);
+  @include type-setting(1);
+  line-height: 1;
   padding: 0 10px;
 
   .kudos-given & {
@@ -78,8 +144,10 @@
   color: $color-text;
   display: inline-block;
   @include type-setting(0);
+  font-weight: $base-font-weight-bold;
   padding: 0 10px;
   vertical-align: middle;
+  font-family: $gotham;
 
   .kudos-given & {
     color: $color-text-over-dark;

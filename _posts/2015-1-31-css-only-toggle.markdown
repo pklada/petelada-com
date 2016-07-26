@@ -27,7 +27,7 @@ Let's start with the HTML. The toggle is, at it's core, an input checkbox. This 
 The markup consists of a container `label`, an `input` element of type `checkbox`, and some additional elements to create the toggle background and switch.
 
 <div class="code-block">
-<span class="code-block_title">HTML</span>
+<span class="code-block__title">HTML</span>
 {% highlight html %}
 <label class="tgl">
   <input type="checkbox" />
@@ -53,7 +53,7 @@ The CSS
 We use SCSS at Guidebook so this part is written in SCSS. I won't go into too much detail about how each element is handled, but I want to cover the most important part of the CSS which also happens to animate the toggle.
 
 <div class="code-block">
-<span class="code-block_title">SCSS</span>
+<span class="code-block__title">SCSS</span>
 {% highlight scss %}
 .tgl {
   > :checked ~ .tgl_body {
@@ -82,7 +82,7 @@ Its important to note that clicking anywhere on the parent `<label>` element wil
 When these rules come into play, the background sections, as well as the switch, animate either left or right. I of course defined some transitions on the `switch` and `bgd` elements in order to have them animate properly. The satisfying 'bounce' effect is gained by using a cubic-bezier curve, rather than an ease or linear curve.
 
 <div class="code-block">
-<span class="code-block_title">SCSS</span>
+<span class="code-block__title">SCSS</span>
 {% highlight scss %}
 $anim-slight-bounce: cubic-bezier(0.34,1.61,0.7,1);
 $anim-speed-normal: 250ms;

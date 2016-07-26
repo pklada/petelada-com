@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_chat</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="post-details" transform="translate(-274.000000, -1826.000000)" fill="#629D41">
+            <path d="M277.62793,1837 L277.62793,1838.49113 C277.62793,1839.60082 278.254341,1839.87399 279.035346,1839.09299 L281.128332,1837 L290.00004,1837 C290.545291,1837 291,1836.55426 291,1836.00442 L291,1826.99558 C291,1826.44484 290.552303,1826 290.00004,1826 L274.99996,1826 C274.454709,1826 274,1826.44574 274,1826.99558 L274,1836.00442 C274,1836.55516 274.447697,1837 274.99996,1837 L277.62793,1837 Z" id="ic_chat"></path>
+        </g>
+    </g>
+</svg>

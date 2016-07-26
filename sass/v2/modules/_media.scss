@@ -14,9 +14,11 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 5000px;
-    margin-left: -2500px;
+    width: 200vw;
+    margin-left: -1 * 100vw;
     background: $color-faint-bgd;
+    border-top: 1px solid rgba(0,0,0,.04);
+    border-bottom: 1px solid rgba(0,0,0,.04);
     content: "";
   }
 }

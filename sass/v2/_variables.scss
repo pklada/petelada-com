@@ -9,9 +9,11 @@ $black: #414B3B;
 $dark-gray: #51574E;
 $light-gray: #D8D8D8;
 $med-gray: #AEBBA7;
+$red: #F16667;
+$teal: #25D5C7;
 
 // colors by function
-$color-faint-bgd: lighten($light-gray, 10%);
+$color-faint-bgd: lighten($light-gray, 12%);
 $color-border: $light-gray;
 $color-text: $dark-gray;
 $color-subtext: lighten($dark-gray, 20%);
@@ -22,11 +24,18 @@ $color-button-primary-bgd: $base;
 $color-button-primary-text: $white;
 $color-text-over-dark: $white;
 $color-link-over-dark: $white;
+$color-post: $teal;
+$color-footer-bgd: $black;
+
+// vendor colors
+$color-dribbble: #ea4c89;
 
 // base font size
 $em-base: 16px;
 $base-font-size: 1rem;
 $base-line-height: 1.25 * $base-font-size;
+$base-font-weight: 400;
+$base-font-weight-bold: 600;
 
 // base margins and padding
 $base-v-padding: $base-line-height;
@@ -41,6 +50,12 @@ $base-corner-radius: 6px;
 $anim-linear: linear;
 $anim-ease: ease-in-out;
 $anim-slight-bounce: cubic-bezier(0.34,1.61,0.7,1);
+
+// durations
+$duration-short: 150ms;
+$duration-med: 250ms;
+$duration-long: 400ms;
+$duration-v-long: 600ms;
 
 // grid
 $column: 77px;

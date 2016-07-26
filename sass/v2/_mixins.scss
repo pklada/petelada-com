@@ -1,0 +1,27 @@
+
+// mixins
+
+// add a subtle inner border, either light or dark.
+// $type expects either 'dark' (default), or 'light' for a light or dark border
+@mixin has-inner-border($type: 'dark', $border-radius: 0, $alpha: .1) {
+
+  $color: rgba(0, 0, 0, $alpha);
+
+  @if $type == 'light' {
+    $color: rgba(255, 255, 255, $alpha);
+  }
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: $border-radius;
+    content: "";
+    pointer-events: none;
+    border: 1px solid $color;
+  }
+}

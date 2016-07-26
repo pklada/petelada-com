@@ -1,0 +1,81 @@
+
+$row-min-height: $base-line-height * 4;
+
+.row {
+  @include align-items(start);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+
+  min-height: $row-min-height;
+
+  padding-top: $base-v-padding;
+  padding-bottom: $base-v-padding;
+
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.row__lead {
+  padding: 0 $base-h-padding;
+  @include align-items(start);
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+
+  min-width: 120px;
+  text-align: right;
+}
+
+.row__image {
+  @include align-items(start);
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  padding-right: $base-h-padding;
+
+  div {
+    display: inline-block;
+    @include has-inner-border($border-radius: $base-corner-radius/2);
+  }
+
+  img {
+    width: 80px;
+    height: auto;
+    border-radius: $base-corner-radius / 2;
+    display: block;
+  }
+}
+
+.row__content {
+  @include align-items(start);
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include flex-grow(1);
+}
+
+.row__title {
+  @include type-setting(1);
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: inline;
+  font-weight: $base-font-weight-bold;
+
+  a {
+    color: $color-text;
+    border-bottom-color: transparent;
+
+    &:hover {
+      border-bottom-color: $color-text;
+    }
+  }
+}
+
+.row__subtitle {
+  @include type-setting(0);
+  color: $color-subtext;
+}

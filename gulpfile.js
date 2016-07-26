@@ -18,7 +18,11 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass');
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps'),
+    svgMin = require('gulp-svgmin'),
+    cheerio = require('gulp-cheerio'),
+    rename = require("gulp-rename"),
+    imageResize = require('gulp-image-resize');
 
 
 //   TASKS
@@ -62,7 +66,7 @@ gulp.task('scripts', function() {
   ])
     .pipe(gulpif(/[.]coffee$/, coffee({bare: true}).on('error', swallowError)))
     .pipe(concat('main.js'))
-    .pipe(browserify())
+    .pipe(browserify().on('error', swallowError))
     .pipe(gulp.dest('gen/js'))
     .on('error', swallowError)
     .pipe(notify({ message: 'Scripts task complete' }));
@@ -72,17 +76,51 @@ gulp.task('scripts', function() {
 gulp.task('vendor-scripts', function() {
   return gulp.src([
     'js/vendor/*.js',
-    'bower_components/waitForImages/dist/jquery.waitforimages.min.js'
+    'bower_components/waitForImages/dist/jquery.waitforimages.min.js',
+    'node_modules/animejs/anime.js'
   ])
     .pipe(concat('vendor.js'))
     .pipe(uglify())
     .pipe(gulp.dest('gen/js'))
 })
 
-// Jekyll
+// photo thumbnails
 
+gulp.task("thumbnails", function () {
+  gulp.src("./photos/**/*.{jpg,png}")
+    .pipe(imageResize({ width : 10 }))
+    .pipe(rename(function (path) { path.basename += "-thumbnail"; }))
+    .pipe(gulp.dest("./gen/photos/thumb/"));
+});
+
+// svg
+gulp.task('svg', function(cb) {
+  return gulp.src('svg/**/*')
+
+    // add {{ include.class }} to each svg so we can pass a class name w/ jekyll
+    .pipe(cheerio({
+      parserOptions: { xmlMode: true },
+      run: function ($, file) {
+        $('svg').attr('class', '{{ include.class }}');
+        $('svg').attr('xmlns', '');
+      }
+    }))
+
+    // now minify svg
+    .pipe(svgMin({
+      plugins: [{
+        removeTitle: true
+      }]
+    }))
+
+    // have to store svgs in _includes folder if we want to include them via jekyll
+    .pipe(gulp.dest('./_includes/svg'))
+    .pipe(notify({ message: 'SVG task complete' }));
+});
+
+// Jekyll
 gulp.task('jekyll', shell.task([
-  'jekyll serve --watch',
+  'jekyll serve --watch --trace',
 ]));
 
 // Cleanup
@@ -105,10 +143,12 @@ gulp.task('watch', function() {
   gulp.watch('./sass/**/*.{scss,sass}', ['styles']);
   gulp.watch(['js/*.js', 'coffee/*.coffee'], ['scripts']);
   gulp.watch(['js/vendor/*.js'], ['vendor-scripts']);
+  gulp.watch(['./svg/*.svg'], ['svg']);
+  gulp.watch(['./photos/**/*.{jpg,png}'], ['thumbnails']);
 });
 
 gulp.task('default', gulpSequence(
   ['clean', 'clear'],
-  ['styles', 'scripts', 'vendor-scripts', 'fonts'],
+  ['styles', 'scripts', 'vendor-scripts', 'fonts', 'svg', 'thumbnails'],
   ['jekyll', 'watch']
 ));

@@ -19,19 +19,49 @@
     background: $color-faint-bgd;
     content: "";
   }
-}
 
-.img__caption {
-  display: block;
-  @include type-setting(0);
-  color: $color-subtext;
-  margin-top: $base-v-margin;
-  position: relative;
-  z-index: 1;
-  font-style: italic;
+  .img__caption {
+    display: block;
+    @include type-setting(0);
+    color: $color-subtext;
+    margin-top: $base-v-margin;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+  }
 }
 
 .img__image {
   position: relative;
   z-index: 1;
+  border-radius: $base-corner-radius/2;
+  width: 100%;
+
+  img {
+    max-width: 100%;
+    border-radius: $base-corner-radius/2;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.img--condensed {
+  width: 100%;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &:before {
+    display: none;
+  }
+
+  .img__image {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }

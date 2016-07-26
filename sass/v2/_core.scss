@@ -9,6 +9,8 @@ html, body {
 	background: $color-bgd;
 	overflow-x: hidden;
 	font-size: $em-base;
+	font-weight: $base-font-weight;
+	background: $color-footer-bgd;
 
 	&.debug {
 		background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($color-link, 40%) 50%);
@@ -20,10 +22,22 @@ html, body {
 // main scaffolding
 
 .container {
+	background: $color-bgd;
 	width: 100%;
+	position: relative;
+
+	.anim-canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		pointer-events: none;
+	}
 }
 
 .main-content {
+	background: $color-bgd;
 	@include outer-container;
 
 	main {
@@ -47,7 +61,41 @@ html, body {
 	margin-top: -1 * $base-line-height * 5;
 	margin-bottom: $base-line-height * 2;
 	border-radius: $base-corner-radius;
-	background: $black;
 	box-shadow: 0 0 0 5px $color-bgd;
+
+	background-color: $black;
+	background-position: center center;
 	background-size: cover;
+	overflow: hidden;
+
+	@include transform(translateZ(0));
+
+	@include has-inner-border($border-radius: $base-corner-radius);
+}
+
+.photo-box__placeholder {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	background-color: $black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	@include transition(opacity ease $duration-v-long);
+}
+
+.title__twitter-icon {
+	width: 22px;
+	height: auto;
+	position: relative;
+	top: 2px;
+
+	path {
+		fill: $base;
+		opacity: .5;
+	}
 }

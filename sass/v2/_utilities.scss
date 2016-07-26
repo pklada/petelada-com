@@ -5,6 +5,14 @@
   vertical-align: middle;
 }
 
+.pipes {
+
+  + .pipes {
+    border-left: 1px solid $color-border;
+    margin-left: $base-h-margin / 2;
+    padding-left: $base-h-margin / 2;
+  }
+}
 
 // layout utility classes
 

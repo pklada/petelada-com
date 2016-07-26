@@ -33,6 +33,14 @@ Kudos.prototype = {
       // track the click in GA
       ga('send', 'event', 'kudosButton', 'click', 'kudos-' + _that.postID);
 
+      // refresh other kudos components if they exist
+      if (window.pageKudos) {
+        $(window.pageKudos).each(function(){
+          $(this)[0].fetchKudos();
+          $(this)[0].disableKudos();
+        });
+      }
+
       _that.disableKudos();
     });
   },
@@ -67,13 +75,16 @@ Kudos.prototype = {
       }else{
         count = 0;
       }
-      _that.renderKudos(count)
+      _that.renderKudos(count);
+      $kudos.removeClass('is-loading');
     });
   },
 
   initKudos: function() {
     var that = this;
     $kudos = that.$el;
+
+    $kudos.addClass('is-loading');
 
     if($.cookie('kudos-' + that.postID) === 'kudos'){
       $kudos.addClass('kudos-given');
@@ -117,9 +128,10 @@ function isMobile() {
 $(document).ready(function(){
 
   if( $('.post__kudos').length > 0){
-
+    window.pageKudos = [];
     $('.post__kudos').each(function(){
       var kudos = new Kudos($(this));
+      window.pageKudos.push(kudos);
     });
 
   }

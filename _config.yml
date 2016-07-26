@@ -3,11 +3,29 @@ description: I am a designer and front-end developer. I spend my time fussing wi
 markdown: kramdown
 redcarpet:
   extensions: []
-highlighter: pygments
+highlighter: rouge
 baseurl: ''
 domain: petelada.com
 excerpt_separator: <!--end-->
 paginate: 5
-paginate_path: "/:num/"
+paginate_path: "/posts/:num/"
 gems: [jekyll-paginate]
-ignore: [bower_components, node_modules, sass, js]
+exclude: [bower_components, node_modules, sass]
+
+
+# front matter defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
+      is_post: true
+      type: 'post'
+      read_more_text: 'Read More'
+  -
+    scope:
+      path: ""
+    values:
+      show_name: true

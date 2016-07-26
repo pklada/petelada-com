@@ -1,0 +1,45 @@
+
+.code-block {
+  position: relative;
+  padding-top: $base-v-padding;
+  padding-bottom: $base-v-padding;
+  margin-top: $base-v-margin;
+  margin-bottom: $base-v-margin;
+
+  &:before {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200vw;
+    margin-left: -1 * 100vw;
+    border-top: 1px solid rgba(0,0,0,.04);
+    border-bottom: 1px solid rgba(0,0,0,.04);
+    content: "";
+  }
+
+  pre {
+    position: relative;
+    z-index: 2;
+
+    @include type-setting(0);
+
+    span {
+      font-family: monospace, serif;
+    }
+  }
+}
+
+.code-block__title {
+  position: relative;
+  z-index: 2;
+  font-family: $gotham;
+  @include type-setting(-1);
+  color: $color-bgd;
+  background: $color-border;
+  padding: 0 4px;
+  height: $base-line-height;
+  display: inline-block;
+  border-radius: $base-corner-radius / 2;
+}

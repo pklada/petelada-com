@@ -12,6 +12,7 @@ $card-bgd: $color-bgd;
 
 .card__title {
   margin-top: 0;
+  @include type-setting(1);
 }
 
 .card__content {
@@ -26,8 +27,24 @@ $card-bgd: $color-bgd;
   max-height: $base-line-height * 5;
   overflow: hidden;
 
-  .img, .media {
+  .media {
     display: none;
+  }
+
+  .img {
+    @extend .img--condensed;
+  }
+}
+
+.card__image {
+  margin-top: $base-line-height;
+  @include has-inner-border($border-radius: $base-corner-radius/2);
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: $base-corner-radius / 2;
   }
 }
 
@@ -40,9 +57,22 @@ $card-bgd: $color-bgd;
   }
 }
 
+.card__chiclet {
+  margin-bottom: 0;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  opacity: .5;
+
+  .card:hover & {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
 .card__main {
   position: relative;
-  
+
   &:before {
     position: absolute;
     left: 0;
@@ -63,9 +93,16 @@ $card-bgd: $color-bgd;
   padding: $base-v-padding $base-h-padding;
   border-top: 1px solid transparentize($color-border, .5);
   border-radius: 0 0 $base-corner-radius $base-corner-radius;
-  background: darken($card-bgd, 3%);
+  //background: darken($card-bgd, 3%);
 }
 
+.card--has-image {
+  .card__main {
+    &:before {
+      display: none;
+    }
+  }
+}
 
 .card--full-height {
   height: 100%;

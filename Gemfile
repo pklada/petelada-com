@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github-pages'
+gem 'github-pages', '~> 88'
 gem 'json'
 gem 'multi_json', '1.7.8'
 gem 'compass'

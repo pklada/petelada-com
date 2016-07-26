@@ -78,19 +78,35 @@
     <body>
 
         <div class="container">
-
+          <canvas class="anim-canvas"></canvas>
           <section class="top-nav {% unless page.has_aside %}no-aside{% endunless %}">
             <div class="top-nav__container">
+              <a class="top-nav__logo {% unless !page.show_name %}hide-name{% endunless %}" href="/">
+                <span>{% include svg/ic_logo_med.svg %}</span>
+                <span class="name"><span class="name__first">Pete</span> <span class="name__last">Lada</span></span>
+              </a>
               <nav class="top-nav__nav">
                 <ul>
                   <li>
-                    <a href="" class="is-selected">About</a>
+                    <a href="/" class="{% if page.selected == 'about' %}is-selected{% endif %}">
+                      <span>About</span>
+                      <span class="ripple ripple--hover"></span>
+                      <span class="ripple ripple--click"></span>
+                    </a>
                   </li>
                   <li>
-                    <a href="">Posts</a>
+                    <a href="/posts/" class="{% if page.is_post or page.selected == 'posts' %}is-selected{% endif %}">
+                      <span>Posts</span>
+                      <span class="ripple ripple--hover"></span>
+                      <span class="ripple ripple--click"></span>
+                    </a>
                   </li>
                   <li>
-                    <a href="">Contact</a>
+                    <a href="">
+                      <span>Contact</span>
+                      <span class="ripple ripple--hover"></span>
+                      <span class="ripple ripple--click"></span>
+                    </a>
                   </li>
                 </ul>
               </nav>
