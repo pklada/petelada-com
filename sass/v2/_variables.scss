@@ -13,7 +13,7 @@ $red: #F16667;
 $teal: #25D5C7;
 
 // colors by function
-$color-faint-bgd: lighten($light-gray, 12%);
+$color-faint-bgd: lighten($light-gray, 10%);
 $color-border: $light-gray;
 $color-text: $dark-gray;
 $color-subtext: lighten($dark-gray, 20%);
@@ -25,7 +25,7 @@ $color-button-primary-text: $white;
 $color-text-over-dark: $white;
 $color-link-over-dark: $white;
 $color-post: $teal;
-$color-footer-bgd: $black;
+$color-footer-bgd: $color-faint-bgd;
 
 // vendor colors
 $color-dribbble: #ea4c89;
@@ -36,6 +36,7 @@ $base-font-size: 1rem;
 $base-line-height: 1.25 * $base-font-size;
 $base-font-weight: 400;
 $base-font-weight-bold: 600;
+$base-font-weight-black: 700;
 
 // base margins and padding
 $base-v-padding: $base-line-height;

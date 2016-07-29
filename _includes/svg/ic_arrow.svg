@@ -1,0 +1,1 @@
+<svg width="13" height="12" viewBox="0 0 13 12" class="{{ include.class }}"><g fill="#629D41" fill-rule="evenodd"><path d="M0 5h10v2H0z"/><path d="M5.071 10.314l1.414 1.414 5.657-5.657L6.485.414 5.071 1.828l4.243 4.243-4.243 4.243z"/></g></svg>

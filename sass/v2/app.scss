@@ -5,11 +5,13 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+@import "mixins";
+@import "functions/typography";
+@import "bem";
+
 @import "typography";
 
 @import "utilities";
-
-@import "mixins";
 
 @import "core";
 

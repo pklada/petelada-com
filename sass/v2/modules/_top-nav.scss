@@ -4,8 +4,8 @@
 // variables
 $top-nav-height: $base-line-height * 6;
 $top-nav-link-h-padding: 20px;
-$color-top-nav-bgd: mix($color-bgd, $base, 85%);
-$color-top-nav-ripple: shade($color-top-nav-bgd, 4%);
+$color-top-nav-bgd: mix($color-bgd, $base, 90%);
+$color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
 
 .top-nav {
   height: $top-nav-height;

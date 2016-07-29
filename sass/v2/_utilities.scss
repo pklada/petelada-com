@@ -5,6 +5,10 @@
   vertical-align: middle;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .pipes {
 
   + .pipes {
@@ -19,6 +23,10 @@
 .l-v-spaced {
   margin-top: $base-v-margin;
   margin-bottom: $base-v-margin;
+}
+
+.l-v-top-spaced {
+  margin-top: $base-v-margin;
 }
 
 .l-h-spaced {
@@ -40,4 +48,8 @@
 
 .l-h-left-right-spaced {
   margin-right: $base-h-margin / 2;
+}
+
+.l-padded {
+  @include pad();
 }

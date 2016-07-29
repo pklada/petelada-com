@@ -1,12 +1,32 @@
-.footer {
 
+
+@include module (footer) {
   background: $color-footer-bgd;
   @include pad($base-line-height default);
-
   text-align: center;
 
   p {
-    color: $color-text-over-dark;
+    color: $color-text;
   }
 
+  @include element (nav) {
+    ul {
+      margin: 0;
+      margin-bottom: $base-line-height;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: $base-h-margin;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include element (link) {
+    @extend a.appears-as-text;
+  }
 }

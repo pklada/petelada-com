@@ -9,23 +9,23 @@ $gotham: 'Gotham SSm A', 'Gotham SSm B', Gotham, sans-serif;
 $type-settings: (
   -1: (
     font-size: rem(12),
-    line-height: $base-line-height
+    line-height: lines(1)
   ),
   0: (
     font-size: rem(14),
-    line-height: $base-line-height
+    line-height: lines(1)
   ),
   1: (
     font-size: rem(18),
-    line-height: $base-line-height * 2
+    line-height: lines(2)
   ),
   2: (
     font-size: rem(24),
-    line-height: $base-line-height * 2
+    line-height: lines(2)
   ),
 	3: (
     font-size: rem(30),
-    line-height: $base-line-height * 2
+    line-height: lines(2)
   )
 );
 
@@ -65,13 +65,14 @@ ul {
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: $base-font-weight-black;
   @include type-setting(2);
   margin: 0 0 $base-line-height 0;
   color: $color-headline;
 }
 
 h2 {
+	font-weight: $base-font-weight-black;
   @include type-setting(1);
   margin: 0 0 $base-line-height 0;
   color: $color-headline;

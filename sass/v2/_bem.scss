@@ -1,0 +1,38 @@
+
+// this will generate a bem module
+
+$_module_name: _unknown_;
+
+@function element_selector($element-name) {
+  @return ".#{$_module_name}__#{$element-name}";
+}
+
+@mixin module ($module-name) {
+  $_module_name: $module-name !global;
+
+  .#{$module-name} {
+    @content;
+  }
+}
+
+@mixin element ($element-name, $scope: 'descendent') {
+  $selector: element-selector($element-name);
+
+  @if $scope == 'descendent' {
+    #{$selector} {
+      @content;
+    }
+  }
+
+  @else if $scope == 'child' {
+    > #{$selector} {
+      @content;
+    }
+  }
+
+  @else if $scope == 'unify' {
+    #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+}

@@ -12,6 +12,7 @@ $card-bgd: $color-bgd;
 
 .card__title {
   margin-top: 0;
+  font-weight: $base-font-weight-bold;
   @include type-setting(1);
 }
 

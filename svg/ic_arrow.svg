@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="12px" viewBox="0 0 13 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-icons" transform="translate(-314.000000, -203.000000)" fill="#629D41">
+            <g id="ic_arrow" transform="translate(314.000000, 203.000000)">
+                <rect id="Rectangle-15" x="0" y="5" width="10" height="2"></rect>
+                <path d="M10.4852814,4.07106781 L10.4852814,2.07106781 L2.48528137,2.07106781 L2.48528137,10.0710678 L4.48528137,10.0710678 L4.48528137,4.07106781 L10.4852814,4.07106781 Z" id="Combined-Shape" transform="translate(6.485281, 6.071068) rotate(135.000000) translate(-6.485281, -6.071068) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

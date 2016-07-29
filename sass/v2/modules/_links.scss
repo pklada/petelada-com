@@ -2,6 +2,8 @@
 a {
 	color: $color-link;
 	text-decoration: none;
+	font-weight: $base-font-weight + 100;
+
 	@include transition-property(color, border, background);
   @include transition-duration(100ms);
   @include transition-timing-function(ease);
@@ -20,6 +22,22 @@ a {
 
 		border-bottom-color: transparentize($color-link-over-dark, .7);
 	}
+
+	&.appears-as-text {
+		color: $color-text;
+		border-bottom-color: transparentize($color-text, .7);
+	}
+
+	&.arrow {
+		background: transparent url(/svg/ic_arrow.svg) 98.5% center no-repeat;
+		padding-right: $base-h-padding;
+		border-bottom: 0;
+		overflow: visible;
+
+		&:hover {
+			background-position: 100% center;
+		}
+	}
 }
 
 
@@ -34,7 +52,7 @@ a {
       -1px -1px 0 $color-bgd,
       1px -1px 0 $color-bgd,
       -1px 1px 0 $color-bgd,
-      1px 1px 0 $color-bgd; 
+      1px 1px 0 $color-bgd;
 
     &:hover {
       background-image: linear-gradient(to bottom,rgba(0,0,0,0) 50%, lighten($color-link, 30%) 50%);
