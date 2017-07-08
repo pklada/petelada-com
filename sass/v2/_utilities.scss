@@ -53,3 +53,17 @@
 .l-padded {
   @include pad();
 }
+
+// display
+
+.l-inline-block {
+  display: inline-block;
+}
+
+// responsive helpers
+
+.hidden-mobile {
+  @include mobile {
+    display: none;
+  }
+}

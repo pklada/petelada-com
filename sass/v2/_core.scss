@@ -54,6 +54,22 @@ html, body {
 		@include span-columns(4);
 		@include pad($base-line-height*2 0 $base-line-height*2 default);
 	}
+
+	@include mobile {
+		main {
+			@include span-columns(12);
+			@include pad($base-line-height $base-h-padding);
+
+			&.is-solo {
+				@include shift(0);
+			}
+		}
+
+		aside {
+			@include span-columns(12);
+			@include pad($base-line-height $base-h-padding);
+		}
+	}
 }
 
 .photo-box {
@@ -71,6 +87,15 @@ html, body {
 	@include transform(translateZ(0));
 
 	@include has-inner-border($border-radius: $base-corner-radius);
+
+	@include mobile {
+		margin-top: -1 * $base-line-height * 4;
+		width: 200px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
+	}
 }
 
 .photo-box__placeholder {

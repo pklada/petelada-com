@@ -1,0 +1,75 @@
+
+
+@include module("waterfall") {
+  $waterfall-margin: $base-h-padding;
+  $waterfall-lane-margin: $waterfall-margin / 2;
+
+  @include display(flex);
+  @include flex-direction(row);
+  @include align-items(flex-start);
+  @include justify-content(center);
+  @include flex(0 1 auto);
+  @include flex-wrap(wrap);
+
+  @include element("lane") {
+    @include flex(0 1 auto);
+    width: calc(50% - #{$waterfall-lane-margin});
+    margin-left: $waterfall-margin;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @include mobile {
+      width: calc(100%);
+      margin-left: 0;
+    }
+
+    @include tablet {
+      width: calc(100%);
+      margin-left: 0;
+    }
+  }
+
+  @include element("item") {
+    display: block;
+    margin-bottom: $base-v-margin;
+  }
+
+  @include submodule("animated") {
+    @include element("item") {
+      @include transition(all $anim-ease $duration-med);
+      @include transform(translateZ(0) translateY(20px));
+      opacity: 0;
+    }
+
+    &.is-loaded {
+      @include element("lane") {
+
+        @include element("item") {
+          @include transition(all $anim-ease $duration-med);
+          @include transform(translateZ(0) translateY(0));
+          opacity: 1;
+
+          &:nth-child(1) {
+            @include transition-delay(0);
+          }
+
+          &:nth-child(2) {
+            @include transition-delay(300ms);
+          }
+        }
+
+        &:nth-child(2) {
+          @include element("item") {
+            @include transition-delay(200ms);
+
+            &:nth-child(2) {
+              @include transition-delay(400ms);
+            }
+          }
+        }
+      }
+    }
+  }
+}

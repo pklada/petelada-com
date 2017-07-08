@@ -3,6 +3,9 @@
 $(document).ready(function() {
   var fireworks = (function() {
 
+    var animating = false;
+    var hovered = false;
+
     var getFontSize = function() {
       return parseFloat(getComputedStyle(document.documentElement).fontSize);
     }
@@ -74,9 +77,11 @@ $(document).ready(function() {
     var removeAnimation = function(animation) {
       var index = animations.indexOf(animation);
       if (index > -1) animations.splice(index, 1);
+      animating = false;
     }
 
     var animateParticules = function(x, y) {
+      animating = true;
       setCanvasSize();
       var particules = createParticles(x, y);
       var circle = createCircle(x, y);
@@ -122,6 +127,18 @@ $(document).ready(function() {
       updateCoords(e, this);
       animateParticules(x, y);
     })
+
+    $('.js-boom-on-hover').on('mouseover', function(e) {
+      if (!animating && !hovered) {
+        hovered = true;
+        updateCoords(e, this);
+        animateParticules(x, y);
+      }
+    })
+
+    $('.js-boom-on-hover').on('mouseout', function() {
+      hovered = false;
+    });
 
     window.addEventListener('resize', setCanvasSize, false);
 

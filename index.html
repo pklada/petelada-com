@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Pete Lada
-has_aside: true
 selected: about
 show_name: false
 ---
@@ -11,7 +10,7 @@ show_name: false
   <div class="photo-box" data-target-image="plada_profile">
 
   </div>
-  <div class="status">
+  <div class="status hidden-mobile">
     <h2>
       {% include svg/bolt.svg class="v-align-middle" %}
       <span class="v-align-middle l-h-left-half-spaced">Status</span>
@@ -35,41 +34,82 @@ show_name: false
     <span class="v-align-middle l-h-left-half-spaced">Recent Things</span>
   </h2>
 
+  <div class="waterfall waterfall--animated">
+    <div class="waterfall__lane">
+      {% for post in site.posts limit:4 %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'even' %}
+          <div class="waterfall__item">
+            <div class="card card--full-height {% if post.type == 'dribbble' %}card--has-image{% endif %}">
+              <div class="card__content">
+                <div class="card__item card__main">
+                  <p class="card__chiclet chiclet chiclet--{{ post.type }}">{{ post.type | uppercase }}</p>
+                  {% if post.type == 'dribbble' %}
+                    <div class="card__image">
+                      <img src="{{ post.img }}" />
+                    </div>
+                  {% else %}
+                    <h3 class="card__title">{{ post.title }}</h3>
+                    <div class="card__description bgd-underlines">
+                      {{ post.excerpt }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="card__item card__footer">
 
-  <div class="flex-row flex-row--half">
-
-    {% for post in site.posts limit:4 %}
-    <div class="flex-row__item">
-      <div class="card card--full-height {% if post.type == 'dribbble' %}card--has-image{% endif %}">
-        <div class="card__content">
-          <div class="card__item card__main">
-            <p class="card__chiclet chiclet chiclet--{{ post.type }}">{{ post.type | uppercase }}</p>
-            {% if post.type == 'dribbble' %}
-              <div class="card__image">
-                <img src="{{ post.img }}" />
+                  {% capture post_url %}
+                    {% if post.type == 'dribbble' %}
+                      {{ post.alt_url }}
+                    {% else %}
+                      {{ site.baseurl }}{{ post.url }}
+                    {% endif %}
+                  {% endcapture %}
+                  <a href="{{ post_url }}" class="button button--secondary button--full-width">{{ post.read_more_text | default: "Read more"}}</a>
+                </div>
               </div>
-            {% else %}
-              <h3 class="card__title">{{ post.title }}</h3>
-              <div class="card__description bgd-underlines">
-                {{ post.excerpt }}
-              </div>
-            {% endif %}
+            </div>
           </div>
-          <div class="card__item card__footer">
-
-            {% capture post_url %}
-              {% if post.type == 'dribbble' %}
-                {{ post.alt_url }}
-              {% else %}
-                {{ site.baseurl }}{{ post.url }}
-              {% endif %}
-            {% endcapture %}
-            <a href="{{ post_url }}" class="button button--secondary button--full-width">{{ post.read_more_text | default: "Read more"}}</a>
-          </div>
-        </div>
-      </div>
+        {% endif %}
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    <div class="waterfall__lane">
+      {% for post in site.posts limit:4 %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+          <div class="waterfall__item">
+            <div class="card card--full-height {% if post.type == 'dribbble' %}card--has-image{% endif %}">
+              <div class="card__content">
+                <div class="card__item card__main">
+                  <p class="card__chiclet chiclet chiclet--{{ post.type }}">{{ post.type | uppercase }}</p>
+                  {% if post.type == 'dribbble' %}
+                    <div class="card__image">
+                      <img src="{{ post.img }}" />
+                    </div>
+                  {% else %}
+                    <h3 class="card__title">{{ post.title }}</h3>
+                    <div class="card__description bgd-underlines">
+                      {{ post.excerpt }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="card__item card__footer">
+
+                  {% capture post_url %}
+                    {% if post.type == 'dribbble' %}
+                      {{ post.alt_url }}
+                    {% else %}
+                      {{ site.baseurl }}{{ post.url }}
+                    {% endif %}
+                  {% endcapture %}
+                  <a href="{{ post_url }}" class="button button--secondary button--full-width">{{ post.read_more_text | default: "Read more"}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
 
   </div>
 
@@ -78,3 +118,9 @@ show_name: false
   </div>
 
 </main>
+
+<script type="text/javascript">
+  setTimeout(function() {
+    $('.waterfall').addClass('is-loaded');
+  }, 10);
+</script>

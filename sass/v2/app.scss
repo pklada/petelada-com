@@ -6,6 +6,7 @@
 @import "neat/neat";
 
 @import "mixins";
+@import "mixins/responsive";
 @import "functions/typography";
 @import "bem";
 
@@ -30,6 +31,7 @@
 @import 'modules/row';
 @import 'modules/code-block';
 @import 'modules/thumb';
+@import 'modules/waterfall';
 
 // syntax highlighting
 @import 'syntax';

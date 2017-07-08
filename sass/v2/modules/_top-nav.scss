@@ -6,6 +6,7 @@ $top-nav-height: $base-line-height * 6;
 $top-nav-link-h-padding: 20px;
 $color-top-nav-bgd: mix($color-bgd, $base, 90%);
 $color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
+$boom-anim-duration: 100;
 
 .top-nav {
   height: $top-nav-height;
@@ -14,6 +15,16 @@ $color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
   background-color: $color-top-nav-bgd;
 
   box-shadow: inset 0 -1px rgba(0,0,0,.06);
+
+  @include mobile {
+    height: auto;
+    padding-bottom: $base-line-height * 3;
+    padding-top: $base-line-height;
+
+    &.no-aside {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .top-nav__container {
@@ -114,6 +125,31 @@ $color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
       }
     }
   }
+
+  @include mobile {
+    @include span-columns(12);
+    @include shift(0);
+
+    text-align: center;
+    height: auto;
+    float: none;
+
+    ul {
+      float: none;
+      display: inline-block;
+      height: auto;
+      line-height: inherit;
+    }
+
+    li {
+      right: 0;
+      margin-top: $base-line-height;
+    }
+
+    .no-aside & {
+      @include shift(0);
+    }
+  }
 }
 
 .top-nav__logo {
@@ -180,15 +216,16 @@ $color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
       color: $base;
     }
 
-    .name__last {
-      @include transition-delay($duration-med);
-    }
-
     .name__first,
     .name__last {
       @include transform(translateX(0) scale(1));
       @include transition-timing-function($anim-slight-bounce);
+      @include transition-delay(#{$boom-anim-duration}ms);
       opacity: 1;
+    }
+
+    .name__last {
+      @include transition-delay($duration-med + $boom-anim-duration);
     }
   }
 
@@ -198,5 +235,21 @@ $color-top-nav-ripple: shade($color-top-nav-bgd, 5%);
 
   .no-aside & {
     @include shift(2);
+  }
+
+  @include mobile {
+    @include shift(0);
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+
+    .name {
+      display: none;
+    }
+
+    .no-aside & {
+      @include shift(0);
+    }
   }
 }

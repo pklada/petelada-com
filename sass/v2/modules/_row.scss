@@ -20,7 +20,7 @@ $row-min-height: $base-line-height * 4;
 }
 
 .row__lead {
-  padding: 0 $base-h-padding;
+  padding: 0 $base-h-padding 0 0;
   @include align-items(start);
   @include display(flex);
   @include flex-direction(column);
@@ -28,6 +28,10 @@ $row-min-height: $base-line-height * 4;
 
   min-width: 120px;
   text-align: right;
+
+  @include mobile {
+    min-width: auto;
+  }
 }
 
 .row__image {
@@ -72,6 +76,10 @@ $row-min-height: $base-line-height * 4;
     &:hover {
       border-bottom-color: $color-text;
     }
+  }
+
+  @include mobile {
+    @include type-setting(0);
   }
 }
 

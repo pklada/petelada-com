@@ -7,7 +7,7 @@ highlighter: rouge
 baseurl: ''
 domain: petelada.com
 excerpt_separator: <!--end-->
-paginate: 5
+paginate: 8
 paginate_path: "/posts/:num/"
 gems: [jekyll-paginate]
 exclude: [bower_components, node_modules, sass]

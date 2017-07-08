@@ -3,8 +3,16 @@
 
 $_module_name: _unknown_;
 
-@function element_selector($element-name) {
+@function element-selector($element-name) {
   @return ".#{$_module_name}__#{$element-name}";
+}
+
+@function submodule-selector($submodule-name) {
+  @return ".#{$_module_name}--#{$submodule-name}";
+}
+
+@function module-name() {
+  @return $_module_name;
 }
 
 @mixin module ($module-name) {
@@ -31,8 +39,16 @@ $_module_name: _unknown_;
   }
 
   @else if $scope == 'unify' {
-    #{selector-unify(&, $selector)} {
+    #{selector-unify(&, $element-name)} {
       @content;
     }
+  }
+}
+
+@mixin submodule($submodule-name) {
+  $selector: submodule-selector($submodule-name);
+
+  &#{$selector} {
+    @content;
   }
 }
