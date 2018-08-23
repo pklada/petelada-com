@@ -1,0 +1,39 @@
+
+
+.pag {
+  margin-top: $large-margin-vertical;
+  margin-bottom: $base-margin-vertical;
+  display: table;
+  width: 100%;
+
+  @include respond-to(handhelds) {
+
+    .l-table-cell {
+      width: 50%;
+
+      &:first-child {
+        padding-left: $base-mobile-padding + 5px;
+        padding-right: $base-mobile-padding / 2;
+      }
+
+      &:last-child {
+        padding-right: $base-mobile-padding + 5px;
+        padding-left: $base-mobile-padding / 2;
+      }
+    }
+
+    .button {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.pag_number {
+  text-align: center;
+  color: $base;
+
+  @include respond-to(handhelds) {
+    display: none;
+  }
+}

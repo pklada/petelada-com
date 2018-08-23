@@ -1,0 +1,110 @@
+// Spinner module for displaying around the site while things are loading
+
+@include module("spn") {
+
+  @include element("spinner") {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: -3px;
+  }
+
+  @include element("spinner_arm") {
+    width: 10%;
+    height: 25%;
+    background: $light-gray;
+    position: absolute;
+    left: 44.5%;
+    top: 37%;
+    margin-left: -1px;
+    @include transform-origin(bottom, center);
+    @include border-radius(1px 1px 0 0);
+    @include animation(fade 1s infinite);
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        @include transform(rotate(#{(30 * $i) - 30}deg) translateY(-100%));
+        @include animation-delay(#{-1 * ((8.3 * $i) / 100)}s);
+      }
+    }
+  }
+
+  @include submodule("12") {
+
+    > .spn_spinner {
+      width: 12px;
+      height: 12px;
+    }
+
+  }
+
+  @include submodule("16") {
+
+    > .spn_spinner {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @include submodule("overlay") {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 100%;
+    top: 0;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 1;
+    background: transparentize($bgd, .2);
+
+    > .spn_spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -12px;
+      margin-top: -12px;
+    }
+
+    &.spn-16 {
+      > .spn_spinner {
+        margin-top: -8px;
+        margin-left: -8px;
+      }
+    }
+
+    &.spn-12 {
+      > .spn_spinner {
+        margin-top: -6px;
+        margin-left: -6px;
+      }
+    }
+  }
+
+  @include submodule("inline") {
+    font-size: 0;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+  }
+
+  @include element("dot") {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 3px;
+    background: $light-gray;
+    border-radius: 50%;
+    margin-right: 3px;
+    @include animation(fade 1s infinite);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        @include animation-delay(#{1 * ((8.3 * $i) / 100)}s);
+      }
+    }
+  }
+}

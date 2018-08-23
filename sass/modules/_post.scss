@@ -1,0 +1,319 @@
+
+.post-container {
+	background: white;
+	border-radius: $base-border-radius;
+	@include box-shadow(0 2px 4px rgba(0,0,0,.04));
+	border:1px solid transparentize($base, .75);
+	position: relative;
+	margin-top:$large-margin-vertical;
+	margin-bottom:rhythm(1);
+	@include transition(transform ease 250ms, opacity ease 250ms);
+	@include transform(translateZ(0) translateY(20px));
+	@include transition-delay(150ms);
+	opacity: 0;
+
+	&:after{
+		content: "";
+		position: absolute;
+		display: block;
+		left:10px;
+		right:10px;
+		height:10px;
+		bottom:-10px;
+		background: white;
+		border-radius: $base-border-radius;
+		@include box-shadow(0 2px 4px rgba(0,0,0,.04), inset 0 2px 4px rgba(0,0,0,.04));
+		border:1px solid transparentize($base, .75);
+		opacity: .7;
+	}
+
+	@include respond-to(handhelds) {
+		margin-left:5px;
+		margin-right:5px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.is-ready {
+		@include transform(translateZ(0) translateY(0px));
+		opacity: 1;
+	}
+}
+
+.post-spinner {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -17px;
+	@include transition(opacity ease 250ms);
+	opacity: 1;
+	
+	&.is-hidden {
+		opacity: 0;
+	}
+}
+
+.meta{
+	position: absolute;
+	top:10px;
+	left:0;
+	width:130px;
+	bottom:0;
+	margin-top:$large-margin-vertical;
+	padding-left:$base-padding;
+	@include clearfix();
+
+	@include respond-to(handhelds) {
+		width: auto;
+	}
+
+	p{
+		color:$base;
+		@include adjust-font-size-to(13px);
+		clear:left;
+
+		@include respond-to(handhelds) {
+			clear:none;
+			float:left;
+			padding-left:10px;
+		}
+	}
+
+	.post-icon{
+		display: block;
+		float: left;
+		width:52px;
+		height:42px;
+		background: transparent url("/images/post-icon-text.png") left no-repeat;
+		margin-bottom:$base-margin-vertical;
+		@include image-2x("/images/post-icon-text@2x.png", 52px, 42px);
+
+		@include respond-to(handhelds) {
+			width:26px;
+			height:21px;
+			background-size:26px 21px;
+		}
+	}
+
+	@include respond-to(handhelds) {
+		position: relative;
+		top:0;
+		left:0;
+		padding-left:$base-mobile-padding;
+		margin-right: 110px;
+
+		.post-icon{
+			margin-bottom:rhythm(.5);
+		}
+	}
+}
+
+.post{
+	margin-left:130px;
+	max-width:700px;
+	padding-left:$base-padding;
+	padding-right:$base-padding;
+	margin-top:$large-margin-vertical;
+	margin-bottom:$large-margin-vertical;
+
+	h2{
+		//text-transform: uppercase;
+		@include adjust-font-size-to(34px);
+		clear:both;
+		color:$black;
+		font-weight:500;
+		//font-variant:small-caps; disable for now, causes issues in FF
+
+		a{
+			color:$black;
+			text-decoration: none;
+
+			&:hover{
+				text-decoration: underline;
+				color:$black;
+			}
+		}
+	}
+
+	hr {
+		margin-top: rhythm(1);
+		margin-bottom: rhythm(1);
+		height: 1px;
+		border: none;
+		background-color: $faint-gray;
+	}
+
+	h3{
+		font-weight:600;
+	}
+
+	p{
+
+		a{
+			text-decoration: underline;
+		}
+	}
+
+	.code-block_title {
+		display: inline-block;
+		padding: 5px 10px;
+		background-color: white;
+		position: absolute;
+		top: -((10px+11px)/2);
+		left: 10px;
+		@include adjust-font-size-to(11px);
+		line-height: 11px;
+		text-transform: uppercase;
+		color: $gray;
+	}
+
+	.code-block {
+		padding: rhythm(2) 0;
+		margin: rhythm(2) 0;
+		border-top: 1px solid $faint-gray;
+		border-bottom: 1px solid $faint-gray;
+		position: relative;
+	}
+
+	pre {
+		position: relative;
+		margin: 0;
+	}
+
+	p > code {
+		font-weight: 500;
+		border: 1px solid $faint-gray;
+		padding: 1px 4px;
+		border-radius: 3px;
+	}
+
+	img{
+		max-width:100%;
+		display: block;
+		margin-bottom: rhythm(1);
+	}
+
+	@include respond-to(handhelds) {
+		margin-left:0;
+		margin-top:0;
+		padding-left:$base-mobile-padding;
+		padding-right:$base-mobile-padding;
+
+		h2{
+			margin-top: 0;
+		}
+	}
+}
+
+.post-actions{
+	margin-left:130px;
+	padding-left:$base-padding;
+	padding-right:$base-padding;
+	margin-top: 0;
+	margin-bottom:$large-margin-vertical;
+
+	@include respond-to(handhelds) {
+		border-top:1px solid #eee;
+		margin-left:0;
+		margin-top:0;
+		padding-top:$base-mobile-padding;
+		padding-left:$base-mobile-padding;
+		padding-right:$base-mobile-padding;
+		margin-bottom: 0;
+
+		a{
+			display: block;
+			margin-bottom: rhythm(1);
+			text-align: center;
+			margin-right:0;
+		}
+	}
+}
+
+
+.post_kudos {
+	position: absolute;
+	right: $base-padding;
+	top: rhythm(2);
+	margin-top: 10px;
+	background: white;
+	border:1px solid transparentize($base, .75);
+	text-align: center;
+	border-radius: $base-border-radius;
+	@include transition(all $anim-slight-bounce 200ms);
+	@include transform(scale(1));
+	outline: none !important;
+
+	&:hover {
+		background: $bgd;
+	}
+
+	&.is-pressed {
+		@include transform(scale(.95));
+	}
+
+	@include respond-to(handhelds) {
+		top:$large-margin-vertical;
+		margin-top: -10px;
+		right: $base-mobile-padding;
+	}
+
+}
+
+.post_kudos_label_text {
+	margin-left: 3px;
+
+	@include respond-to(handhelds) {
+		display: none;
+	}
+}
+
+.post_kudos_label {
+	@include adjust-font-size-to(13px);
+	display: inline-block;
+	padding: 5px 10px;
+	color: $black;
+
+	> .fa {
+		color: $base;
+	}
+}
+
+.post_kudos_count {
+	@include adjust-font-size-to(13px);
+	display: inline-block;
+	padding: 5px 10px;
+	border-left: 1px solid transparentize($base, .75);
+	color: $black;
+
+	.no-kudos &{
+		opacity: .5;
+	}
+}
+
+
+.kudos-given {
+	background: $base;
+
+	.post_kudos_label {
+		color: $white;
+
+		> .fa {
+			color: $white;
+		}
+	}
+
+	.post_kudos_count {
+		color: $white;
+		font-weight:bold;
+		border-left-color: darken($base, 10%);
+	}
+
+	&:hover {
+		background: $base;
+	}
+}

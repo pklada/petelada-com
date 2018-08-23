@@ -1,0 +1,15 @@
+
+
+.tags {
+	margin-bottom: rhythm(1);
+}
+
+.tags_tag {
+	display: inline-block;
+	@include adjust-font-size-to(12px);
+	color: $base;
+	margin-right: 10px;
+	border: 1px solid lighten($base, 40%);
+	padding: 1px 5px;
+	@include border-radius(3px);
+}

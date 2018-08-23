@@ -1,0 +1,13 @@
+name: Pete Lada - Designer / Developer
+description: I am a designer and front-end developer. I spend my time fussing with pixels in Sketch or pretending I know how to use vim. I live in the cheerful Bay Area and love coffee.
+markdown: kramdown
+redcarpet:
+  extensions: []
+highlighter: pygments
+baseurl: ''
+domain: petelada.com
+excerpt_separator: <!--end-->
+paginate: 5
+paginate_path: "/:num/"
+gems: [jekyll-paginate]
+ignore: [bower_components, node_modules, sass, js]

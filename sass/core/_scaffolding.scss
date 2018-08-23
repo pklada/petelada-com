@@ -1,0 +1,99 @@
+.header{
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow:hidden;
+
+	.content{
+		height:200px;
+	}
+
+	.collapsed-header & {
+		.content {
+			height: $collapsed-header-height;
+		}
+	}
+
+	@include respond-to(handhelds) {
+		height: auto;
+
+		.content{
+			height: auto;
+		}
+	}
+}
+
+.page-title{
+	position: absolute;
+	left:130px + $base-padding;
+	height:85px;
+	top:50%;
+	right:0;
+	margin-top:-42.5px;
+
+	.collapsed-header & {
+		height: $collapsed-header-height;
+		top: 0;
+		margin-top: 0;
+		padding-top: 13px;
+	}
+
+	@include respond-to(handhelds) {
+		position: relative;
+		top:0;
+		left:0;
+		margin-top:0;
+		height:auto;
+		padding:$base-padding;
+		padding-top:130px + $base-padding;
+	}
+}
+
+.site-nav{
+	float:right;
+	margin-right:$base-padding;
+}
+
+.hero{
+	overflow: hidden;
+}
+
+.content{
+	width:1000px;
+	margin:0 auto;
+	position: relative;
+
+	@include respond-to(handhelds) { width: 100% ;}
+}
+
+.main{
+
+	.content{
+
+		&:before{
+			content: "";
+			position: absolute;
+			left:126px;
+			top:-(rhythm(2));
+			bottom:-50px;
+			width:4px;
+			background: transparentize($base, .95);
+			z-index:0;
+		}
+
+		@include respond-to(handhelds) {
+
+			&:before{
+				left:50%;
+				margin-left:-2px;
+			}
+		}
+	}
+
+	@include respond-to(handhelds) {
+		margin-top: -1 * $base-mobile-padding;
+		position: relative;
+		z-index: 1;
+	}
+}

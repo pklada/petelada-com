@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div class="post-spinner">
+	<div class="spn">
+    <div class="spn_spinner">
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+      <div class="spn_spinner_arm"></div>
+    </div>
+  </div>
+</div>
+
+<div class="post-container" data-post-id="{{page.id}}">
+
+	<div class="meta">
+		<div class="post-icon"></div>
+		<p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+	</div>
+	<div class="post">
+		<a name="post"></a>
+		<h2>{{ page.title }}</h2>
+		{% if page.tags %}
+		<div class="tags">
+			{% for tag in page.tags %}
+			<div class="tags_tag">#{{ tag }}</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+		{{ content }}
+	</div>
+	<div class="post-actions">
+		{% if page.custom-button-url %}
+		<a href="{{page.custom-button-url}}" class="button {{page.custom-button-class}}">{{page.custom-button-title}}</a>
+		{% endif %}
+
+		{% for button in page.custom_buttons %}
+			<a href="{{button.url}}" class="button {{button.class}}">
+				{% if button.fa %}
+					<i class="fa fa-{{button.fa}}"></i>
+				{% endif %}
+				{{button.title}}
+			</a>
+		{% endfor %}
+
+		<a href="http://twitter.com/share?text={{page.title}}&url=http://{{site.domain}}{{page.url}}" class="button button-weak"><i class="fa fa-twitter"></i> Share on Twitter</a>
+	</div>
+
+</div> <!-- / .post-container -->

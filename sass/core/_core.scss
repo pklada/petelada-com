@@ -1,0 +1,21 @@
+*, 
+*:before,
+*:after{
+	box-sizing:border-box;
+}
+
+
+html, body{
+	background:$bgd;
+}
+
+a{
+	color:$base-link-color;
+	text-decoration: none;
+	@include transition-property(color);
+  	@include transition-duration(100ms);
+  	@include transition-timing-function(cubic-bezier(.05,1.18,.5,1.15));
+	&:hover{
+		color:lighten($base-link-color, 15%);
+	}
+}

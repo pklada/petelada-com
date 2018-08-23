@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        {% if page.id %}
+        <meta name="description" content="{{ page.content | strip_html | truncate: 200 }}" />
+        <title>{{ page.title }} | Pete Lada</title>
+        <meta property="og:title" content="{{page.title}} | Pete Lada" />
+        <meta property="og:description" content="{{ page.content | strip_html | truncate: 200 }}" />
+        <meta name="twitter:title" content="{{page.title}} | Pete Lada" />
+        <meta name="twitter:description" content="{{ page.content | strip_html | truncate: 200 }}" />
+        {% else %}
+        <meta name="description" content="{{site.description}}" />
+        <title>{{ site.name }}</title>
+        <meta property="og:title" content="{{site.name}}" />
+        <meta property="og:description" content="{{ site.description }}" />
+        <meta name="twitter:title" content="{{site.name}}" />
+        <meta name="twitter:description" content="{{ site.description }}" />
+        {% endif %}
+
+        <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ site.baseurl }}/gen/css/app.css">
+
+        <!-- fonts -->
+        <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6167292/627024/css/fonts.css" />
+
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="{{site.baseurl}}/gen/js/vendor.js"></script>
+
+        <!-- fb open grah -->
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Pete Lada - Designer / Developer" />
+        <meta property="og:url" content="http://{{site.domain}}{{page.url}}" />
+
+        <!-- twitter meta -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@pklada" />
+        <meta name="twitter:creator" content="@pklada" />
+
+        <!-- firebase -->
+        <!-- remove for now <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script> -->
+
+        <!-- JS -->
+        <script src="{{ site.baseurl }}/gen/js/main.js"></script>
+
+        {% if page.img %}
+        <link rel="image_src" href="http://petelada.com{{ page.img }}" />
+        <meta property="og:image" content="http://petelada.com{{ page.img }}" />
+        <meta name="twitter:image" content="http://petelada.com{{ page.img }}" />
+        {% else %}
+        <link rel="image_src" href="http://petelada.com/images/plada-web-image.png" />
+        <meta property="og:image" content="http://petelada.com/images/plada-web-image.png" />
+        <meta name="twitter:image" content="http://petelada.com/images/plada-web-image.png" />
+        {% endif %}
+
+
+        <!-- google analytics -->
+
+        <script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-57093653-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="container">
+          <div class="splash">
+            <div class="splash_bgd"></div>
+            <div class="header">
+              <div class="content">
+                <div class="icon">
+                  <a href="http://{{site.domain}}">Pete Lada</a>
+                </div>
+                <div class="page-title">
+                  <h1 class="title"><span class="title_deemphasized">Hi, I'm </span>Pete Lada <span class="title_coffee">☕</span></h1>
+                  <div class="site-nav">
+                    <ul>
+                      <li><a href="/" class="selected">Posts</a></li>
+                      <li><a href="mailto:pklada@gmail.com">Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="social">
+                    <ul>
+                      <li><a href="http://twitter.com/pklada"><i class="fa fa-twitter"></i> pklada</a></li>
+                      <li><a href="http://dribbble.com/plada"><i class="fa fa-dribbble"></i> plada</a></li>
+                      <li><a href="https://github.com/pklada"><i class="fa fa-github"></i> pklada</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero">
+              <div class="content">
+                <h2>I am a designer and front-end developer. I spend my time fussing with pixels in <del>Photoshop</del> Sketch or pretending I know how to use vim. I live in the cheerful Bay Area and love coffee. ☕</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="main">
+            <div class="content">
+              {{ content }}
+            </div>
+          </div>
+
+          <div class="footer">
+            <div class="content">
+              <p>Generated lovingly with <a href="http://jekyllrb.com/">Jekyll</a> (which is amazing).</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="js-mobile-test"></div>
+    </body>
+</html>
