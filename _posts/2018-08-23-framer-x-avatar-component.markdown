@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Framer X Avatar Component"
-date:   2018-08-04
+date:   2018-08-23
 img: "/images/framer-x-avatar-component.png"
 custom_buttons:
   - url: "https://dribbble.com/shots/5000201-Framer-X-Avatar-Component"
