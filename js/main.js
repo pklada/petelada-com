@@ -1,6 +1,6 @@
 
-var firebase = new Firebase("https://petelada-com.firebaseio.com/");
-var k = firebase.child('kudos');
+//var firebase = new Firebase("https://petelada-com.firebaseio.com/");
+//var k = firebase.child('kudos');
 
 
 
@@ -119,6 +119,8 @@ $(document).ready(function(){
   if( $('.post_kudos').length > 0){
 
     $('.post_kudos').each(function(){
+      // firebase DB sadly got wiped, so removing the kudos functionality for now.
+      return;
       var kudos = new Kudos($(this));
     });
 

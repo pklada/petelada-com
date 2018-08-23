@@ -82,7 +82,7 @@ gulp.task('vendor-scripts', function() {
 // Jekyll
 
 gulp.task('jekyll', shell.task([
-  'jekyll serve --watch',
+  'bundle exec jekyll serve --watch',
 ]));
 
 // Cleanup
