@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sketch Redline Helper Symbols"
-date:   2018-08-04
+date:   2018-04-08
 img: "/images/redline-helper-symbols.png"
 custom_buttons:
   - url: "/files/redline-helper-symbols.sketch"
